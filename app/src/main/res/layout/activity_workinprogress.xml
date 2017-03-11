@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/wip_layout"
-        android:name="in.co.praveenkumar.mdroid.fragment.WorkInProgressFragment"
+        android:name="id.ac.ui.cs.scele.mobile.fragment.WorkInProgressFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

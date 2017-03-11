@@ -12,7 +12,7 @@
 
         <fragment
             android:id="@+id/adFragment"
-            android:name="in.co.praveenkumar.mdroid.fragment.AdFragment"
+            android:name="id.ac.ui.cs.scele.mobile.fragment.AdFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true" />

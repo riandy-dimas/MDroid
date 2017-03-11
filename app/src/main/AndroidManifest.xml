@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.co.praveenkumar"
+    package="id.ac.ui.cs.scele"
     android:versionCode="50"
     android:versionName="6.5.5 MDroid APIs">
 
@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:name="in.co.praveenkumar.mdroid.helper.ApplicationClass"
+        android:name="id.ac.ui.cs.scele.mobile.helper.ApplicationClass"
         android:allowBackup="true"
         android:icon="@mipmap/icon_launcher"
         android:label="@string/app_name"
@@ -34,7 +34,7 @@
 
         <!-- App activities -->
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.LaunchActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.LaunchActivity"
             android:configChanges="screenSize|orientation"
             android:label="@string/app_name"
             android:noHistory="true"
@@ -46,59 +46,59 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.TutorialActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.TutorialActivity"
             android:configChanges="screenSize|orientation"
             android:label="@string/app_name"
             android:noHistory="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.LoginActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.LoginActivity"
             android:configChanges="screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.WebservicesoffActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.WebservicesoffActivity"
             android:configChanges="screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.WorkInProgressActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.WorkInProgressActivity"
             android:configChanges="screenSize|orientation"
             android:launchMode="singleTask"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.CourseActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.CourseActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.MessagingActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.MessagingActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.ContactActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.ContactActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.CourseContentActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.CourseContentActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.CalendarActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.CalendarActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.ForumActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.ForumActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.DiscussionActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.DiscussionActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.PostActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.PostActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.NotificationActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.NotificationActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.AppBrowserActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.AppBrowserActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.DonationActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.DonationActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="in.co.praveenkumar.mdroid.activity.SettingsActivity"
+            android:name="id.ac.ui.cs.scele.mobile.activity.SettingsActivity"
             android:configChanges="screenSize|orientation"></activity>
 
         <!-- Sugar SqlLite related -->
@@ -117,17 +117,17 @@
 
         <!-- Services related -->
         <service
-            android:name="in.co.praveenkumar.mdroid.service.MDroidService"
+            android:name="id.ac.ui.cs.scele.mobile.service.MDroidService"
             android:description="@string/app_service_description"
             android:icon="@drawable/ic_launcher"
             android:label="MDroidNotificationService"></service>
 
-        <receiver android:name="in.co.praveenkumar.mdroid.service.ScheduleReceiver">
+        <receiver android:name="id.ac.ui.cs.scele.mobile.service.ScheduleReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver android:name="in.co.praveenkumar.mdroid.service.StartServiceReceiver"></receiver>
+        <receiver android:name="id.ac.ui.cs.scele.mobile.service.StartServiceReceiver"></receiver>
     </application>
 
 </manifest>

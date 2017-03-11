@@ -12,14 +12,14 @@
 
         <fragment
             android:id="@+id/adFragment"
-            android:name="in.co.praveenkumar.mdroid.fragment.AdFragment"
+            android:name="id.ac.ui.cs.scele.mobile.fragment.AdFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true" />
 
         <fragment
             android:id="@+id/discussion_layout"
-            android:name="in.co.praveenkumar.mdroid.fragment.DiscussionFragment"
+            android:name="id.ac.ui.cs.scele.mobile.fragment.DiscussionFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/adFragment" />
