@@ -3,10 +3,13 @@ package id.ac.ui.cs.scele.mobile.activity;
 import id.ac.ui.cs.scele.R;
 import id.ac.ui.cs.scele.mobile.helper.AppInterface.DonationInterface;
 import id.ac.ui.cs.scele.mobile.helper.AppInterface.DrawerStateInterface;
+import id.ac.ui.cs.scele.mobile.helper.BottomNavigationViewHelper;
 import id.ac.ui.cs.scele.mobile.helper.Param;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -72,6 +75,41 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 					}
 				});
 	}
+
+	public void setUpBotNav(){
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.action_dashboard:
+                            Toast.makeText(getBaseContext(), "DASHBOARD",
+                                    Toast.LENGTH_LONG).show();
+                            return true;
+                        case R.id.action_calendar:
+                            Toast.makeText(getBaseContext(), "KALENDER",
+                                    Toast.LENGTH_LONG).show();
+                            return true;
+                        case R.id.action_messages:
+                            Toast.makeText(getBaseContext(), "PESAN",
+                                    Toast.LENGTH_LONG).show();
+                            return true;
+                        case R.id.action_forum:
+                            Toast.makeText(getBaseContext(), "FORUM",
+                                    Toast.LENGTH_LONG).show();
+                            return true;
+                        case R.id.action_more:
+                            Toast.makeText(getBaseContext(), "MORE",
+                                    Toast.LENGTH_LONG).show();
+                            return true;
+                    }
+                    return false;
+                }
+            });
+    }
 
 	public void setUpDrawer() {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

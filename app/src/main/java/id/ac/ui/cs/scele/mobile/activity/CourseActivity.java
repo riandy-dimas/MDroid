@@ -31,6 +31,7 @@ public class CourseActivity extends BaseNavigationActivity {
 
 		setContentView(R.layout.activity_course);
 		setUpDrawer();
+        setUpBotNav();
 
 		// Send a tracker
 		((ApplicationClass) getApplication())
