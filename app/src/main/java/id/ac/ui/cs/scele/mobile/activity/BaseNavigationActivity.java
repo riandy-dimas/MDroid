@@ -88,10 +88,14 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
                         case R.id.action_dashboard:
                             Toast.makeText(getBaseContext(), "DASHBOARD",
                                     Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(BaseNavigationActivity.this,
+                                    CourseActivity.class));
                             return true;
                         case R.id.action_calendar:
                             Toast.makeText(getBaseContext(), "KALENDER",
                                     Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(BaseNavigationActivity.this,
+                                    CalendarActivity.class));
                             return true;
                         case R.id.action_messages:
                             Toast.makeText(getBaseContext(), "PESAN",
