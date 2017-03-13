@@ -18,17 +18,6 @@
             android:layout_alignParentTop="true"
             android:background="@color/moodle_color" />
 
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/course_pager"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_above="@id/adFragment"
-            android:layout_below="@id/sliding_tabs"
-            android:background="@color/grey14" >
-
-        </android.support.v4.view.ViewPager>
-
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
@@ -38,6 +27,18 @@
             app:itemIconTint="@drawable/nav_bot_selector"
             app:itemTextColor="@drawable/nav_bot_selector"
             app:menu="@menu/list_menu_bottom" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/course_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/sliding_tabs"
+            android:layout_above="@id/bottom_navigation"
+            android:background="@color/grey14" >
+
+        </android.support.v4.view.ViewPager>
+
+
     </RelativeLayout>
 
 
