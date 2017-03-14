@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_dashboard"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/bot_nav_dashboard"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_calendar"
+        android:enabled="true"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="@string/bot_nav_calendar"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_messages"
+        android:enabled="true"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="@string/bot_nav_messages"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_forum"
+        android:enabled="true"
+        android:icon="@drawable/ic_question_answer_black_24dp"
+        android:title="@string/bot_nav_forum"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_more"
+        android:enabled="true"
+        android:icon="@drawable/ic_more_horiz_black_24dp"
+        android:title="@string/bot_nav_other"
+        app:showAsAction="ifRoom" />
+
+</menu>

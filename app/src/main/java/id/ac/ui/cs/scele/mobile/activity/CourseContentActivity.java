@@ -14,6 +14,7 @@ import id.ac.ui.cs.scele.mobile.view.SlidingTabLayout;
 import java.util.List;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -23,7 +24,8 @@ import android.widget.Toast;
 public class CourseContentActivity extends BaseNavigationActivity {
 	private int courseid;
 	private ViewPager viewPager;
-	private static final String[] TABS = { "Contents", "Forums", "Calendar",
+    protected NavigationView navigationView;
+    private static final String[] TABS = { "Contents", "Forums", "Calendar",
 			"Participants" };
 
 	@Override

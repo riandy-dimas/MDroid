@@ -3,10 +3,13 @@ package id.ac.ui.cs.scele.mobile.activity;
 import id.ac.ui.cs.scele.R;
 import id.ac.ui.cs.scele.mobile.helper.AppInterface.DonationInterface;
 import id.ac.ui.cs.scele.mobile.helper.AppInterface.DrawerStateInterface;
+import id.ac.ui.cs.scele.mobile.helper.BottomNavigationViewHelper;
 import id.ac.ui.cs.scele.mobile.helper.Param;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -83,13 +86,14 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 
 			/** Called when a drawer has settled in a completely closed state. */
 			public void onDrawerClosed(View view) {
-				getSupportActionBar().setTitle(LastTitle);
+
+//                getSupportActionBar().setTitle(LastTitle);
 			}
 
 			/** Called when a drawer has settled in a completely open state. */
 			public void onDrawerOpened(View drawerView) {
-				LastTitle = getSupportActionBar().getTitle();
-				getSupportActionBar().setTitle(MenuTitle);
+//				LastTitle = getSupportActionBar().getTitle();
+//				getSupportActionBar().setTitle(MenuTitle);
 			}
 		};
 
