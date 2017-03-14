@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.1"
 
     defaultConfig {
-        applicationId "in.co.praveenkumar"
+        applicationId "id.ac.ui.cs.scele"
         minSdkVersion 14
         targetSdkVersion 22
     }
