@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "in.co.praveenkumar"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 22
     }
 
@@ -34,4 +34,5 @@ dependencies {
     compile 'com.anjlab.android.iab.v3:library:1.0.29'
 
     compile 'com.android.support:design:25.0.1'
+    compile 'com.aurelhubert:ahbottomnavigation:2.0.6'
 }
