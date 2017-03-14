@@ -268,7 +268,7 @@ public class CalenderFragment extends Fragment implements OnRefreshListener {
 			public int compare(MoodleEvent o1, MoodleEvent o2) {
 				if (o1.getTimestart() == o2.getTimestart())
 					return 0;
-				return o1.getTimestart() < o2.getTimestart() ? -1 : 1;
+				return o1.getTimestart() > o2.getTimestart() ? -1 : 1;
 			}
 		});
 
