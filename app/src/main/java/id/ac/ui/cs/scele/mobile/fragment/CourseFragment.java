@@ -63,7 +63,6 @@ public class CourseFragment extends Fragment implements OnRefreshListener {
 		if (this.getArguments() != null)
 			Type = this.getArguments().getInt("coursesType", TYPE_USER_COURSES);
 	}
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

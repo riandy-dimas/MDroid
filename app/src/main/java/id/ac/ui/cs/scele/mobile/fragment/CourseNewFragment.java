@@ -5,17 +5,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ListView;
+
 
 import id.ac.ui.cs.scele.R;
-import id.ac.ui.cs.scele.mobile.helper.SessionSetting;
-import id.ac.ui.cs.scele.mobile.helper.Workaround;
-import id.ac.ui.cs.scele.mobile.model.MoodleCourse;
 import id.ac.ui.cs.scele.mobile.view.SlidingTabLayout;
 
 /**
@@ -23,7 +18,6 @@ import id.ac.ui.cs.scele.mobile.view.SlidingTabLayout;
  */
 
 public class CourseNewFragment extends Fragment {
-    private ViewPager viewPager;
     private static final String[] TABS = { "My Courses", "Archived Courses" };
 
     public CourseNewFragment() {
