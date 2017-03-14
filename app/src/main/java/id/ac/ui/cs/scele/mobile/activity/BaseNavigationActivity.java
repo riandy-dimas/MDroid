@@ -76,45 +76,6 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 				});
 	}
 
-	public void setUpBotNav(){
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.bottom_navigation);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    switch (item.getItemId()) {
-                        case R.id.action_dashboard:
-                            Toast.makeText(getBaseContext(), "DASHBOARD",
-                                    Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(BaseNavigationActivity.this,
-                                    CourseActivity.class));
-                            return true;
-                        case R.id.action_calendar:
-                            Toast.makeText(getBaseContext(), "KALENDER",
-                                    Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(BaseNavigationActivity.this,
-                                    CalendarActivity.class));
-                            return true;
-                        case R.id.action_messages:
-                            Toast.makeText(getBaseContext(), "PESAN",
-                                    Toast.LENGTH_LONG).show();
-                            return true;
-                        case R.id.action_forum:
-                            Toast.makeText(getBaseContext(), "FORUM",
-                                    Toast.LENGTH_LONG).show();
-                            return true;
-                        case R.id.action_more:
-                            Toast.makeText(getBaseContext(), "MORE",
-                                    Toast.LENGTH_LONG).show();
-                            return true;
-                    }
-                    return false;
-                }
-            });
-    }
-
 	public void setUpDrawer() {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerToggle = new ActionBarDrawerToggle(this, /* host Activity */
@@ -125,13 +86,14 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 
 			/** Called when a drawer has settled in a completely closed state. */
 			public void onDrawerClosed(View view) {
-				getSupportActionBar().setTitle(LastTitle);
+
+//                getSupportActionBar().setTitle(LastTitle);
 			}
 
 			/** Called when a drawer has settled in a completely open state. */
 			public void onDrawerOpened(View drawerView) {
-				LastTitle = getSupportActionBar().getTitle();
-				getSupportActionBar().setTitle(MenuTitle);
+//				LastTitle = getSupportActionBar().getTitle();
+//				getSupportActionBar().setTitle(MenuTitle);
 			}
 		};
 

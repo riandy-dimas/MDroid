@@ -33,7 +33,6 @@ public class CourseContentActivity extends BaseNavigationActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_course_contents);
 		setUpDrawer();
-		setUpBotNav();
 
 		// Send a tracker
 		((ApplicationClass) getApplication())

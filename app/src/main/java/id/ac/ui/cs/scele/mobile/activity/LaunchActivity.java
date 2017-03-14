@@ -18,7 +18,7 @@ public class LaunchActivity extends Activity {
 
 		// Skip to courses if logged in
 		if (session.getCurrentSiteId() != SessionSetting.NO_SITE_ID) {
-			Intent i = new Intent(this, CourseActivity.class);
+			Intent i = new Intent(this, MainActivity.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
 					| Intent.FLAG_ACTIVITY_CLEAR_TASK);
 			this.startActivity(i);
@@ -33,7 +33,7 @@ public class LaunchActivity extends Activity {
 		}
 
 		// Start from Tutorial otherwise
-		Intent i = new Intent(this, TutorialActivity.class);
+		Intent i = new Intent(this, MainActivity.class);
 		this.startActivity(i);
 
 	}

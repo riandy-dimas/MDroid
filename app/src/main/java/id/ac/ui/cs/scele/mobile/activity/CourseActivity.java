@@ -17,7 +17,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 public class CourseActivity extends BaseNavigationActivity {
-	final int DIALOG_FREQ = 4;
 	private ViewPager viewPager;
 	private static final String[] TABS = { "MY COURSES", "FAVOURITE COURSES" };
 	RateDialog mRateDialog;
@@ -31,7 +30,6 @@ public class CourseActivity extends BaseNavigationActivity {
 
 		setContentView(R.layout.activity_course);
 		setUpDrawer();
-        setUpBotNav();
 
 		// Send a tracker
 		((ApplicationClass) getApplication())
@@ -57,11 +55,12 @@ public class CourseActivity extends BaseNavigationActivity {
 		mSharedPrefseditor.putInt("dialogCount", dialogCount + 1);
 		mSharedPrefseditor.commit();
 
-		if ((dialogCount) % DIALOG_FREQ == DIALOG_FREQ / 2
-				&& !mSharedPrefs.getBoolean("isRated", false)) {
-			mRateDialog = new RateDialog(this, new DialogActionListener());
-			mRateDialog.show();
-		}
+		//rate dialog
+//		if ((dialogCount) % DIALOG_FREQ == DIALOG_FREQ / 2
+//				&& !mSharedPrefs.getBoolean("isRated", false)) {
+//			mRateDialog = new RateDialog(this, new DialogActionListener());
+//			mRateDialog.show();
+//		}
 	}
 
 	class CourseTabsAdapter extends FragmentPagerAdapter {
