@@ -21,6 +21,7 @@ import id.ac.ui.cs.scele.mobile.fragment.CourseFragment;
 import id.ac.ui.cs.scele.mobile.fragment.CourseNewFragment;
 import id.ac.ui.cs.scele.mobile.fragment.ForumFragment;
 import id.ac.ui.cs.scele.mobile.fragment.MessagingFragment;
+import id.ac.ui.cs.scele.mobile.fragment.MessagingNewFragment;
 import id.ac.ui.cs.scele.mobile.fragment.NotificationFragment;
 import id.ac.ui.cs.scele.mobile.helper.ApplicationClass;
 import id.ac.ui.cs.scele.mobile.helper.BottomNavigationViewHelper;
@@ -75,7 +76,7 @@ public class MainActivity extends BaseNavigationActivity {
                         case R.id.action_messages:
                             Toast.makeText(getBaseContext(), "PESAN",
                                     Toast.LENGTH_LONG).show();
-                            fragment = new MessagingFragment();
+                            fragment = new MessagingNewFragment();
                             break;
                         case R.id.action_forum:
                             Toast.makeText(getBaseContext(), "FORUM",
