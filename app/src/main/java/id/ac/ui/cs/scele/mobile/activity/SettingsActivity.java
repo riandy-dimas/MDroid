@@ -39,31 +39,6 @@ public class SettingsActivity extends PreferenceActivity implements
 		// Setup billing
 		session = new SessionSetting(this);
 		settings = PreferenceManager.getDefaultSharedPreferences(this);
-		billing = new BillingProcessor(this, Param.BILLING_LICENSE_KEY,
-				new BillingProcessor.IBillingHandler() {
-					@Override
-					public void onProductPurchased(String productId,
-							TransactionDetails details) {
-						Toast.makeText(getApplicationContext(),
-								"You purchased this already!",
-								Toast.LENGTH_LONG).show();
-					}
-
-					@Override
-					public void onBillingError(int errorCode, Throwable error) {
-						Toast.makeText(getApplicationContext(),
-								"Purchase failed! Please try again!",
-								Toast.LENGTH_LONG).show();
-					}
-
-					@Override
-					public void onBillingInitialized() {
-					}
-
-					@Override
-					public void onPurchaseHistoryRestored() {
-					}
-				});
 
 		// Set signature & adsPref in prefs to current account value
 		SharedPreferences.Editor editor = settings.edit();
@@ -78,10 +53,10 @@ public class SettingsActivity extends PreferenceActivity implements
 		addPreferencesFromResource(R.xml.preferences);
 
 		// Enable donate only preferences
-		if (isProUser()) {
-			findPreference("messagingSignature").setEnabled(true);
-			findPreference("notifications").setEnabled(true);
-		}
+
+		findPreference("messagingSignature").setEnabled(true);
+		findPreference("notifications").setEnabled(true);
+
 
 		// Add preference click / change listeners
 		findPreference("logout").setOnPreferenceClickListener(this);

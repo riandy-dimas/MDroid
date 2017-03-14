@@ -98,13 +98,13 @@
     <string name="activity_settings_logout_summary">logout current account</string>
     <string name="activity_settings_message_sign_title">Message signature</string>
     <string name="activity_settings_message_sign_positive_btn">Update</string>
-    <string name="activity_settings_message_sign_default">Sent from MDroid - Moodle for Android</string>
-    <string name="activity_settings_message_sign_summary">Message signature. Donate only!</string>
+    <string name="activity_settings_message_sign_default">Sent from Scele Mobile</string>
+    <string name="activity_settings_message_sign_summary">Edit message signature</string>
     <!-- Notification settings section -->
     <string name="activity_settings_cat_notification_title">Notifications</string>
     <string name="activity_settings_cat_notification_summary">Notification settings</string>
     <string name="activity_settings_notifi_title">Notifications</string>
-    <string name="activity_settings_notifi_summary">For new content. Donate only!</string>
+    <string name="activity_settings_notifi_summary">Setting up showed notification</string>
     <string name="activity_settings_notifi_freq_title">Sync frequency</string>
     <string name="activity_settings_notifi_freq_summary">Frequency of notifications checking</string>
     <!-- This is shown to users -->

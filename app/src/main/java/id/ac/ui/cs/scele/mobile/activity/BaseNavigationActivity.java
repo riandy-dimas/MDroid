@@ -33,7 +33,7 @@ import com.anjlab.android.iab.v3.TransactionDetails;
  * 
  */
 public abstract class BaseNavigationActivity extends ActionBarActivity
-		implements DrawerStateInterface, DonationInterface {
+		implements DrawerStateInterface {
 	DrawerLayout mDrawerLayout;
 	ActionBarDrawerToggle mDrawerToggle;
 	BillingProcessor billing;
@@ -49,31 +49,31 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 		getSupportActionBar().setElevation(0);
 
 		// Setup billing
-		billing = new BillingProcessor(this, Param.BILLING_LICENSE_KEY,
-				new BillingProcessor.IBillingHandler() {
-					@Override
-					public void onProductPurchased(String productId,
-							TransactionDetails details) {
-						Toast.makeText(getApplicationContext(),
-								R.string.donations_already_purchased,
-								Toast.LENGTH_LONG).show();
-					}
-
-					@Override
-					public void onBillingError(int errorCode, Throwable error) {
-						Toast.makeText(getApplicationContext(),
-								R.string.donations_purchase_failed,
-								Toast.LENGTH_LONG).show();
-					}
-
-					@Override
-					public void onBillingInitialized() {
-					}
-
-					@Override
-					public void onPurchaseHistoryRestored() {
-					}
-				});
+//		billing = new BillingProcessor(this, Param.BILLING_LICENSE_KEY,
+//				new BillingProcessor.IBillingHandler() {
+//					@Override
+//					public void onProductPurchased(String productId,
+//							TransactionDetails details) {
+//						Toast.makeText(getApplicationContext(),
+//								R.string.donations_already_purchased,
+//								Toast.LENGTH_LONG).show();
+//					}
+//
+//					@Override
+//					public void onBillingError(int errorCode, Throwable error) {
+//						Toast.makeText(getApplicationContext(),
+//								R.string.donations_purchase_failed,
+//								Toast.LENGTH_LONG).show();
+//					}
+//
+//					@Override
+//					public void onBillingInitialized() {
+//					}
+//
+//					@Override
+//					public void onPurchaseHistoryRestored() {
+//					}
+//				});
 	}
 
 	public void setUpDrawer() {
@@ -172,15 +172,4 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 		super.onDestroy();
 	}
 
-	@Override
-	public Boolean isProUser() {
-		if (billing == null)
-			return false;
-
-		return billing.isPurchased(Param.BILLING_DONATION_PID)
-				|| billing.isPurchased(Param.BILLING_FEATURE_NOTIFICATIONS_PID)
-				|| billing.isPurchased(Param.BILLING_FEATURE_PARTICIPANTS_PID)
-				|| billing.isPurchased(Param.BILLING_FEATURE_SEARCH_PID)
-				|| billing.isPurchased(Param.BILLING_FEATURE_UPLOADS_PID);
-	}
 }
