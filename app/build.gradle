@@ -34,5 +34,4 @@ dependencies {
     compile 'com.anjlab.android.iab.v3:library:1.0.29'
 
     compile 'com.android.support:design:25.0.1'
-    compile 'com.aurelhubert:ahbottomnavigation:2.0.6'
 }
