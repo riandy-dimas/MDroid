@@ -45,16 +45,25 @@ public class LeftNavigationFragment extends Fragment {
 	List<MoodleSiteInfo> sites;
 	SessionSetting session;
 
-	String[] moodleMenuItems = new String[] { "Courses", "Messaging",
-			"Contacts", "Calender", "Forums", "Notifications" };
+	String[] moodleMenuItems = new String[] {
+            "Courses",
+     //       "Messaging",
+			"Contacts",
+     //       "Calender",
+     //       "Forums",
+     //       "Notifications"
+	};
 	String[] appMenuItems = new String[] { "Request features", "Settings",
 			"Add account" };
 
-	int[] moodleMenuIcons = new int[] { R.drawable.icon_school_greyscale,
-			R.drawable.icon_message_greyscale,
-			R.drawable.icon_people_greyscale2, R.drawable.icon_today_greyscale,
-			R.drawable.icon_forum_greyscale,
-			R.drawable.icon_notifications_greyscale };
+	int[] moodleMenuIcons = new int[] {
+            R.drawable.icon_school_greyscale,
+	//		R.drawable.icon_message_greyscale,
+			R.drawable.icon_people_greyscale2,
+	//		R.drawable.icon_today_greyscale,
+	//		R.drawable.icon_forum_greyscale,
+	//		R.drawable.icon_notifications_greyscale
+	};
 	int[] appMenuIcons = new int[] { R.drawable.icon_extension_greyscale,
 			R.drawable.icon_settings_greyscale, R.drawable.icon_plus_greyscale };
 
@@ -93,27 +102,27 @@ public class LeftNavigationFragment extends Fragment {
 						context.startActivity(new Intent(context,
 								CourseActivity.class));
 						break;
+//					case 1:
+//						context.startActivity(new Intent(context,
+//								MessagingActivity.class));
+//						break;
 					case 1:
-						context.startActivity(new Intent(context,
-								MessagingActivity.class));
-						break;
-					case 2:
 						context.startActivity(new Intent(context,
 								ContactActivity.class));
 						break;
-					case 3:
-						context.startActivity(new Intent(context,
-								CalendarActivity.class));
-						break;
-					case 4:
-						context.startActivity(new Intent(context,
-								ForumActivity.class));
-						break;
-					case 5:
-						// NOTIFICATIONS HERE
-						context.startActivity(new Intent(context,
-								NotificationActivity.class));
-						break;
+//					case 3:
+//						context.startActivity(new Intent(context,
+//								CalendarActivity.class));
+//						break;
+//					case 4:
+//						context.startActivity(new Intent(context,
+//								ForumActivity.class));
+//						break;
+//					case 5:
+//						// NOTIFICATIONS HERE
+//						context.startActivity(new Intent(context,
+//								NotificationActivity.class));
+//						break;
 					}
 					break;
 				case LeftNavListAdapter.TYPE_APP_MENUITEM:
