@@ -2,6 +2,7 @@ package id.ac.ui.cs.scele.mobile.task;
 
 import id.ac.ui.cs.scele.R;
 import id.ac.ui.cs.scele.mobile.activity.CourseActivity;
+import id.ac.ui.cs.scele.mobile.activity.MainActivity;
 import id.ac.ui.cs.scele.mobile.activity.WebservicesoffActivity;
 import id.ac.ui.cs.scele.mobile.helper.SessionSetting;
 import id.ac.ui.cs.scele.mobile.model.MoodleSiteInfo;
@@ -249,7 +250,7 @@ public class LoginTask extends AsyncTask<String, String, Boolean> {
 	@Override
 	protected void onPostExecute(Boolean status) {
 		if (status) {
-			Intent i = new Intent(context, CourseActivity.class);
+			Intent i = new Intent(context, MainActivity.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
 					| Intent.FLAG_ACTIVITY_CLEAR_TASK);
 			context.startActivity(i);
