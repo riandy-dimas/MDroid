@@ -6,10 +6,13 @@ import id.ac.ui.cs.scele.mobile.helper.SessionSetting;
 import id.ac.ui.cs.scele.mobile.helper.TimeFormat;
 import id.ac.ui.cs.scele.mobile.helper.Workaround;
 import id.ac.ui.cs.scele.mobile.model.MoodleCourse;
+import id.ac.ui.cs.scele.mobile.model.MoodleEvent;
 import id.ac.ui.cs.scele.mobile.model.MoodleForum;
 import id.ac.ui.cs.scele.mobile.task.ForumSyncTask;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.content.Context;
@@ -20,6 +23,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -73,6 +77,7 @@ public class ForumFragment extends Fragment implements OnRefreshListener {
 
 		ListView forumList = (ListView) rootView
 				.findViewById(R.id.content_forum);
+
 		forumListAdapter = new ForumListAdapter(getActivity());
 		forumList.setAdapter(forumListAdapter);
 
@@ -80,7 +85,6 @@ public class ForumFragment extends Fragment implements OnRefreshListener {
 				.findViewById(R.id.swipe_refresh);
 		Workaround.linkSwipeRefreshAndListView(swipeLayout, forumList);
 		swipeLayout.setOnRefreshListener(this);
-
 		new AsyncForumSync(session.getmUrl(), session.getToken(),
 				session.getCurrentSiteId()).execute("");
 		return rootView;
@@ -91,8 +95,9 @@ public class ForumFragment extends Fragment implements OnRefreshListener {
 
 		public ForumListAdapter(Context context) {
 			this.context = context;
-			if (!mForums.isEmpty())
-				forumEmptyLayout.setVisibility(LinearLayout.GONE);
+			if (!mForums.isEmpty()) {
+                forumEmptyLayout.setVisibility(LinearLayout.GONE);
+            }
 		}
 
 		@Override
@@ -200,10 +205,13 @@ public class ForumFragment extends Fragment implements OnRefreshListener {
 				if (courseid == 0)
 					mForums = MoodleForum.find(MoodleForum.class, "siteid = ?",
 							session.getCurrentSiteId() + "");
-				else
+				else{
 					mForums = MoodleForum.find(MoodleForum.class,
 							"siteid = ? and courseid = ?",
 							session.getCurrentSiteId() + "", courseid + "");
+				}
+                Collections.sort(mForums);
+                //Log.d("dims", mForums.get(0).getName());
 				return true;
 			} else
 				return false;

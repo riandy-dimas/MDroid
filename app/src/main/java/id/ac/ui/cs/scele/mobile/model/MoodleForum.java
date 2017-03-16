@@ -1,10 +1,14 @@
 package id.ac.ui.cs.scele.mobile.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 import com.orm.SugarRecord;
 import com.orm.dsl.Ignore;
 
-public class MoodleForum extends SugarRecord<MoodleForum> {
+import java.util.Comparator;
+
+public class MoodleForum extends SugarRecord<MoodleForum> implements Comparable<MoodleForum> {
 
 	// since id is a reserved field in SugarRecord
 	@SerializedName("id")
@@ -376,4 +380,10 @@ public class MoodleForum extends SugarRecord<MoodleForum> {
 		this.siteid = siteid;
 	}
 
+	@Override
+	public int compareTo(@NonNull MoodleForum moodleForum) {
+		if (this.getTimemodified() == moodleForum.getTimemodified())
+			return 0;
+		return this.getTimemodified() > moodleForum.getTimemodified() ? -1 : 1;
+	}
 }
