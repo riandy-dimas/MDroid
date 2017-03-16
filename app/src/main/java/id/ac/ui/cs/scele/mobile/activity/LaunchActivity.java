@@ -33,7 +33,7 @@ public class LaunchActivity extends Activity {
 		}
 
 		// Start from Tutorial otherwise
-		Intent i = new Intent(this, MainActivity.class);
+		Intent i = new Intent(this, LoginActivity.class);
 		this.startActivity(i);
 
 	}
