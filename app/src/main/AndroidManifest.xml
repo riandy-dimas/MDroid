@@ -107,7 +107,7 @@
         <!-- Sugar SqlLite related -->
         <meta-data
             android:name="DATABASE"
-            android:value="mdroid.db" />
+            android:value="scelemobile.db" />
         <meta-data
             android:name="VERSION"
             android:value="8" />
@@ -116,7 +116,7 @@
             android:value="false" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
-            android:value="in.co.praveenkumar.mdroid.model" />
+            android:value="id.ac.ui.cs.scele.mobile.model" />
 
         <!-- Services related -->
         <service
