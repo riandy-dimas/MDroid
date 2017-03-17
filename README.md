@@ -5,30 +5,16 @@ If you like this work, maybe Star :star: this before Fork :fork_and_knife: :wink
 
 Documentation
 ----------------------
-The docs for MDroid can be found at http://praveen.xyz/mdroid which are mirrored from the ```docs``` directory of this respository.
+This application was forked from MDroid and it's docs can be found at http://praveen.xyz/mdroid
 
-
-Setting up MDroid
+Major Change
 ----------------------
-1. Clone using ```git clone --single-branch https://github.com/praveendath92/MDroid.git```
-2. Import MDroid to [Android Studio][3]
-
-
-Code contributions
---------------------
-- [Setup MDroid][1]
-- Code ninja code!
-- Send a pull request 
-
-
-Translating
---------------------
-Check [MDroid Translation page][4]
-
+**will be updated soon*
 
 Author
 ----------------------
-[Praveen Kumar Pendyala][5]
+[Riandy Dimas B][2]
+thanks to [Praveen Kumar Pendyala][5] for the great program
 
 
 License
@@ -37,7 +23,7 @@ Licensed under the [GPL v3][1]
 
 
 [1]: https://tldrlegal.com/license/gnu-general-public-license-v3-%28gpl-3%29
-[2]: https://github.com/praveendath92/MDroid#setting-up-mdroid
+[2]: https://lnked.in/riandydimas
 [3]: https://developer.android.com/tools/studio/index.html
 [4]: https://crowdin.com/project/mdroid
 [5]: https://pkp.io
