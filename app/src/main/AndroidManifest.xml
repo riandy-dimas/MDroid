@@ -17,7 +17,7 @@
     <application
         android:name="id.ac.ui.cs.scele.mobile.helper.ApplicationClass"
         android:allowBackup="true"
-        android:icon="@mipmap/icon_launcher"
+        android:icon="@mipmap/icon_scele"
         android:label="@string/app_name"
         android:theme="@style/Theme.MDroid">
 
