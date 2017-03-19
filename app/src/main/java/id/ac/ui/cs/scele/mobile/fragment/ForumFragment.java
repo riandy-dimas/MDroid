@@ -80,6 +80,8 @@ public class ForumFragment extends Fragment implements OnRefreshListener {
 
 		forumListAdapter = new ForumListAdapter(getActivity());
 		forumList.setAdapter(forumListAdapter);
+		
+		Collections.sort(mForums);
 
 		swipeLayout = (SwipeRefreshLayout) rootView
 				.findViewById(R.id.swipe_refresh);
