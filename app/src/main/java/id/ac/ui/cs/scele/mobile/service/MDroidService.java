@@ -452,13 +452,13 @@ public class MDroidService extends Service {
 
 		NotificationCompat.Builder notification = new NotificationCompat.Builder(
 				this).setContentTitle(contentTitle).setContentText(contentText)
-				.setSmallIcon(R.drawable.ic_actionbar_icon).setSubText(subText)
+				.setSmallIcon(R.drawable.action_bar_ui).setSubText(subText)
 				.setContentInfo(contentInfo).setContentIntent(pIntent)
 				.setAutoCancel(autoCancel).setSound(soundUri);
 
 		if (largeIcon == null)
 			largeIcon = BitmapFactory.decodeResource(getResources(),
-					R.drawable.ic_launcher);
+					R.drawable.ic_launch_scele);
 		notification.setLargeIcon(largeIcon);
 
 		NotificationManager notificationManager = getNotificationManager();

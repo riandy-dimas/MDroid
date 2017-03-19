@@ -63,4 +63,8 @@
     <color name="refresh_green">#0e9755</color>
     <color name="refresh_red">#cf4034</color>
 
+    <!-- Scele color -->
+    <color name="scele_black">#333333</color>
+    <color name="scele_orange">#e2a500</color>
+
 </resources>

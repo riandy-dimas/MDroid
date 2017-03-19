@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 public class LaunchActivity extends Activity {
 
@@ -14,27 +15,34 @@ public class LaunchActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_launch);
-		SessionSetting session = new SessionSetting(this);
+		final SessionSetting session = new SessionSetting(this);
 
-		// Skip to courses if logged in
-		if (session.getCurrentSiteId() != SessionSetting.NO_SITE_ID) {
-			Intent i = new Intent(this, MainActivity.class);
-			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-					| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-			this.startActivity(i);
-			return;
-		}
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Skip to courses if logged in
+                if (session.getCurrentSiteId() != SessionSetting.NO_SITE_ID) {
+                    Intent i = new Intent(LaunchActivity.this, MainActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    LaunchActivity.this.startActivity(i);
+                    return;
+                }
 
-		// Skip to login if tutorial done before
-		if (session.isTutored()) {
-			Intent i = new Intent(this, LoginActivity.class);
-			this.startActivity(i);
-			return;
-		}
+                // Skip to login if tutorial done before
+                if (session.isTutored()) {
+                    Intent i = new Intent(LaunchActivity.this, LoginActivity.class);
+                    LaunchActivity.this.startActivity(i);
+                    return;
+                }
 
-		// Start from Tutorial otherwise
-		Intent i = new Intent(this, LoginActivity.class);
-		this.startActivity(i);
+                // Start from Tutorial otherwise
+                Intent i = new Intent(LaunchActivity.this, LoginActivity.class);
+                LaunchActivity.this.startActivity(i);
+            }
+        }, 3000);
+
+
 
 	}
 
