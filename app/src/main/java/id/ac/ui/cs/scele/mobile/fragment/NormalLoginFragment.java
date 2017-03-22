@@ -101,7 +101,7 @@ public class NormalLoginFragment extends Fragment {
 	private void doNormalLogin() {
 		String username = usernameET.getText().toString();
 		String password = passwordET.getText().toString();
-		String mUrl = murlET.getText().toString();
+		String mUrl = getResources().getString(R.string.scele_test_url);
 		FormValidate fv = new FormValidate();
 		if (!fv.valid(username, password, mUrl)) {
 			usernameET.setError(fv.getUsernameError(username));
