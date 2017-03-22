@@ -27,7 +27,7 @@ public class MoodleRestOption {
 	public static final String FUNCTION_DELETE_CONTACTS = "core_message_delete_contacts";// no_alternatives
 	public static final String FUNCTION_GET_EVENTS = "core_calendar_get_calendar_events";// no_alternatives
 	public static final String FUNCTION_SEND_MESSAGE = "moodle_message_send_instantmessages";// core_message_send_instant_messages
-	public static final String FUNCTION_GET_MESSAGES = "local_mobile_core_message_get_messages";
+	public static final String FUNCTION_GET_MESSAGES = "core_message_get_messages";
 	public static final String FUNCTION_GET_USERS_FROM_COURSE = "moodle_user_get_users_by_courseid";// core_enrol_get_enrolled_users()
 	public static final String FUNCTION_GET_COURSE_ASSIGNMENTS = "mod_assign_get_assignments";
 
