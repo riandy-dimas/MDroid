@@ -10,6 +10,10 @@
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
 
+    <!-- Scele behavior -->
+    <string name="scele_url">https://scele.cs.ui.ac.id</string>
+    <string name="scele_test_url">https://scele-test.cs.ui.ac.id</string>
+
     <!-- Bottom menu navigation -->
     <string name="bot_nav_dashboard">Dashboard</string>
     <string name="bot_nav_calendar">Calendar</string>
