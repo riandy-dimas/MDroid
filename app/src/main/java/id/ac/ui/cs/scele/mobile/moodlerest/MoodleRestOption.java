@@ -19,7 +19,7 @@ public class MoodleRestOption {
 	public static final String FUNCTION_GET_ENROLLED_COURSES = "moodle_enrol_get_users_courses";// core_enrol_get_users_courses
 	public static final String FUNCTION_GET_COURSE_CONTENTS = "core_course_get_contents";// no_alternatives
 	public static final String FUNCTION_GET_FORUMS = "mod_forum_get_forums_by_courses";
-	public static final String FUNCTION_GET_DISCUSSIONS = "mod_forum_get_forum_discussions";
+	public static final String FUNCTION_GET_DISCUSSIONS = "mod_forum_get_forum_discussions_paginated";
 	public static final String FUNCTION_GET_POSTS = "mod_forum_get_forum_discussion_posts";
 	public static final String FUNCTION_GET_SITE_INFO = "moodle_webservice_get_siteinfo";// core_webservice_get_site_info()
 	public static final String FUNCTION_GET_CONTACTS = "core_message_get_contacts";// no_alternatives
