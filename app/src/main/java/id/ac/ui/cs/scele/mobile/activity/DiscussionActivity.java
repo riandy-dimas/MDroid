@@ -10,6 +10,7 @@ import id.ac.ui.cs.scele.mobile.model.MoodleForum;
 import java.util.List;
 
 import android.os.Bundle;
+import android.util.Log;
 
 public class DiscussionActivity extends BaseNavigationActivity implements
 		ForumIdInterface {
@@ -22,16 +23,12 @@ public class DiscussionActivity extends BaseNavigationActivity implements
 		setContentView(R.layout.activity_discussion);
 		setUpDrawer();
 
-		// Send a tracker
-		((ApplicationClass) getApplication())
-				.sendScreen(Param.GA_SCREEN_DISCUSSION);
-
 		// Set title
 		SessionSetting session = new SessionSetting(this);
 		List<MoodleForum> mForums = MoodleForum.find(MoodleForum.class,
 				"forumid = ? and siteid = ?", String.valueOf(forumid),
 				String.valueOf(session.getCurrentSiteId()));
-		if (!mForums.isEmpty())
+        if (!mForums.isEmpty())
 			getSupportActionBar().setTitle(mForums.get(0).getName());
 		getSupportActionBar().setIcon(R.drawable.icon_forum);
 	}

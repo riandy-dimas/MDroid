@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -92,6 +93,8 @@ public class DiscussionFragment extends Fragment implements OnRefreshListener {
 		mTopics = MoodleDiscussion.find(MoodleDiscussion.class,
 				"siteid = ? and forumid = ?", session.getCurrentSiteId() + "",
 				forumid + "");
+		Log.d("dims", "topicsize: "+mTopics.size());
+
 
 		ListView topicList = (ListView) rootView
 				.findViewById(R.id.content_discussion);
@@ -142,6 +145,10 @@ public class DiscussionFragment extends Fragment implements OnRefreshListener {
 						.findViewById(R.id.discussion_lastmodifiedtime);
 				viewHolder.topiclastby = (TextView) convertView
 						.findViewById(R.id.discussion_lastmodifiedby);
+				viewHolder.topicauthorpic = (ImageView) convertView
+						.findViewById(R.id.discussion_icon);
+
+				// icon caranya gini urlnya https://scele-test.cs.ui.ac.id/webservice/pluginfile.php?file=/2878/user/icon/f1&token=43f44b56d08fe377c626c1a497cca3b6
 
 				// Save the holder with the view
 				convertView.setTag(viewHolder);
@@ -157,6 +164,7 @@ public class DiscussionFragment extends Fragment implements OnRefreshListener {
 					.getFirstuserfullname());
 			viewHolder.topiclastby.setText(mTopics.get(position)
 					.getLastuserfullname());
+
 
 			// Time values
 			String timeString = TimeFormat.getNiceTime(mTopics.get(position)
@@ -215,6 +223,7 @@ public class DiscussionFragment extends Fragment implements OnRefreshListener {
 		TextView topicstartby;
 		TextView topiclasttime;
 		TextView topiclastby;
+		ImageView topicauthorpic;
 	}
 
 	private class AsyncTopicsSync extends AsyncTask<String, Integer, Boolean> {
@@ -243,6 +252,8 @@ public class DiscussionFragment extends Fragment implements OnRefreshListener {
 						.find(MoodleDiscussion.class,
 								"siteid = ? and forumid = ?", siteid + "",
 								forumid + "");
+			Log.d("dims", "forumid: "+forumid);
+
 			topicListAdapter.notifyDataSetChanged();
 			swipeLayout.setRefreshing(false);
 		}

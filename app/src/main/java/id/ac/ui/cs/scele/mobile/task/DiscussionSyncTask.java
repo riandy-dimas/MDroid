@@ -1,5 +1,7 @@
 package id.ac.ui.cs.scele.mobile.task;
 
+import android.util.Log;
+
 import id.ac.ui.cs.scele.mobile.model.MDroidNotification;
 import id.ac.ui.cs.scele.mobile.model.MoodleCourse;
 import id.ac.ui.cs.scele.mobile.model.MoodleDiscussion;
@@ -85,6 +87,7 @@ public class DiscussionSyncTask {
 	public Boolean syncDiscussions(ArrayList<String> forumids) {
 		MoodleRestDiscussion mrd = new MoodleRestDiscussion(mUrl, token);
 		ArrayList<MoodleDiscussion> mTopics = mrd.getDiscussions(forumids);
+		Log.d("dims", "disccussion: "+mTopics.size());
 
 		/** Error checking **/
 		// Some network or encoding issue.
@@ -101,7 +104,7 @@ public class DiscussionSyncTask {
 		}
 
 		List<MoodleDiscussion> dbTopics;
-		MoodleDiscussion topic = new MoodleDiscussion();
+		MoodleDiscussion topic;
 		for (int i = 0; i < mTopics.size(); i++) {
 			topic = mTopics.get(i);
 			topic.setSiteid(siteid);

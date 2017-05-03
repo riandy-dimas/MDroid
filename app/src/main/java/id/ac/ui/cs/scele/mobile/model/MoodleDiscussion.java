@@ -6,7 +6,7 @@ import com.orm.SugarRecord;
 public class MoodleDiscussion extends SugarRecord<MoodleDiscussion> {
 
 	// since id is a reserved field in SugarRecord
-	@SerializedName("id")
+	@SerializedName("discussion")
 	int discussionid;
 
 	@SerializedName("course")
@@ -42,7 +42,7 @@ public class MoodleDiscussion extends SugarRecord<MoodleDiscussion> {
 	@SerializedName("firstpost")
 	int firstpost;
 
-	@SerializedName("firstuserfullname")
+	@SerializedName("userfullname")
 	String firstuserfullname;
 
 	@SerializedName("firstuserimagealt")
@@ -324,6 +324,10 @@ public class MoodleDiscussion extends SugarRecord<MoodleDiscussion> {
 	 */
 	public void setSiteid(long siteid) {
 		this.siteid = siteid;
+	}
+
+	public void setForumid(int forumid) {
+		this.forumid = forumid;
 	}
 
 }
