@@ -22,9 +22,6 @@ public class PostActivity extends BaseNavigationActivity implements
 		setContentView(R.layout.activity_post);
 		setUpDrawer();
 
-		// Send a tracker
-		((ApplicationClass) getApplication()).sendScreen(Param.GA_SCREEN_POST);
-
 		// Set title
 		SessionSetting session = new SessionSetting(this);
 		List<MoodleDiscussion> mDiscussions = MoodleDiscussion.find(
