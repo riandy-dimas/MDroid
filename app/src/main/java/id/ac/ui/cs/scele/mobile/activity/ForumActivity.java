@@ -13,9 +13,6 @@ public class ForumActivity extends BaseNavigationActivity {
 		setContentView(R.layout.activity_forum);
 		setUpDrawer();
 
-		// Send a tracker
-		((ApplicationClass) getApplication()).sendScreen(Param.GA_SCREEN_FORUM);
-
 		getSupportActionBar().setTitle("Forums");
 		getSupportActionBar().setIcon(R.drawable.icon_forum);
 	}

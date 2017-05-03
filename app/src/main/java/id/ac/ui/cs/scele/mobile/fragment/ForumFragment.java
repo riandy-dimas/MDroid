@@ -67,13 +67,16 @@ public class ForumFragment extends Fragment implements OnRefreshListener {
 
 		// Get all courses of this site or course
 		session = new SessionSetting(getActivity());
+		Log.d("dims", courseid+" :course");
 		if (courseid == 0)
-			mForums = MoodleForum.find(MoodleForum.class, "siteid = ?",
-					session.getCurrentSiteId() + "");
+			mForums = MoodleForum.find(MoodleForum.class,
+					"siteid = ? and courseid = 1", session.getCurrentSiteId()+"");
 		else
 			mForums = MoodleForum.find(MoodleForum.class,
 					"siteid = ? and courseid = ?", session.getCurrentSiteId()
 							+ "", courseid + "");
+
+		Log.d("dims", mForums.size()+" :forumsize");
 
 		ListView forumList = (ListView) rootView
 				.findViewById(R.id.content_forum);
@@ -198,14 +201,21 @@ public class ForumFragment extends Fragment implements OnRefreshListener {
 			// Get course ids
 			List<MoodleCourse> mCourses = MoodleCourse.find(MoodleCourse.class,
 					"siteid = ?", siteid + "");
-			ArrayList<String> courseIds = new ArrayList<>();
+            Log.d("dims", "mCOursesSize: "+mCourses.size());
+
+
+            ArrayList<String> courseIds = new ArrayList<>();
 			for (int i = 0; i < mCourses.size(); i++)
 				courseIds.add(mCourses.get(i).getCourseid() + "");
+
+			// add main menu forum
+			courseIds.add("1");
+
 			syncStatus = fst.syncForums(courseIds);
 
 			if (syncStatus) {
 				if (courseid == 0)
-					mForums = MoodleForum.find(MoodleForum.class, "siteid = ?",
+					mForums = MoodleForum.find(MoodleForum.class, "siteid = ? and courseid = 1",
 							session.getCurrentSiteId() + "");
 				else{
 					mForums = MoodleForum.find(MoodleForum.class,
