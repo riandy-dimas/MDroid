@@ -41,9 +41,5 @@ public class LaunchActivity extends Activity {
                 LaunchActivity.this.startActivity(i);
             }
         }, 3000);
-
-
-
 	}
-
 }

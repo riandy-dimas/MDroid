@@ -66,5 +66,6 @@
     <!-- Scele color -->
     <color name="scele_black">#333333</color>
     <color name="scele_orange">#e2a500</color>
+    <color name="scele_yellow">#FEC107</color>
 
 </resources>

@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/beautiful_green"
+    android:background="@color/scele_black"
     android:orientation="vertical" >
 
     <!-- Login fields -->
@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/beautiful_green" >
+        android:background="@color/scele_black" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -19,7 +19,9 @@
             android:maxWidth="600dp"
             android:minWidth="600dp"
             android:orientation="vertical"
-            android:paddingTop="40dp" >
+            android:paddingTop="40dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
 
             <!-- Login mode switch button -->
 
@@ -31,7 +33,8 @@
                 android:background="@drawable/white_arrow_left_bg"
                 android:gravity="center"
                 android:onClick="changePage"
-                android:padding="5dp" >
+                android:padding="5dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="10dp"
@@ -49,6 +52,13 @@
                     android:textSize="18sp" />
             </LinearLayout>
 
+            <ImageView android:src="@drawable/ic_login_scele"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_marginBottom="72dp"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center_horizontal" />
+
             <!-- Username -->
 
             <FrameLayout
@@ -57,7 +67,9 @@
                 android:layout_gravity="center_horizontal"
                 android:background="#ffffff"
                 android:gravity="center_vertical"
-                android:paddingTop="@dimen/activity_login_framelayout_paddingtop" >
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
 
                 <EditText
                     android:id="@+id/login_normal_username"
@@ -70,7 +82,7 @@
                     android:paddingLeft="@dimen/activity_login_edittext_paddingleft"
                     android:paddingRight="@dimen/activity_login_edittext_paddingright"
                     android:paddingStart="@dimen/activity_login_edittext_paddingstart"
-                    android:textColorHint="@color/edittext_hint_color" />
+                    android:textColorHint="@color/edittext_hint_color"/>
 
                 <ImageView
                     android:layout_width="50dp"
@@ -91,7 +103,8 @@
                 android:layout_gravity="center_horizontal"
                 android:background="#ffffff"
                 android:gravity="center_vertical"
-                android:paddingTop="@dimen/activity_login_framelayout_paddingtop" >
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
 
                 <EditText
                     android:id="@+id/login_normal_password"
@@ -126,7 +139,8 @@
                 android:background="#ffffff"
                 android:gravity="center_vertical"
                 android:paddingBottom="15dp"
-                android:paddingTop="@dimen/activity_login_framelayout_paddingtop" >
+                android:paddingTop="@dimen/activity_login_framelayout_paddingtop"
+                android:visibility="gone">
 
                 <EditText
                     android:id="@+id/login_normal_url"
@@ -158,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="72dp"
                 android:background="@drawable/white_btn_bg"
                 android:padding="8dp"
                 android:text="@string/activity_login_login_button"
@@ -174,7 +188,8 @@
                 android:layout_gravity="center_horizontal|bottom"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
-                android:gravity="center_horizontal" >
+                android:gravity="center_horizontal"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/login_demo_icon"

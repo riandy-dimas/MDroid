@@ -14,8 +14,9 @@
     <!-- Login activity -->
     <dimen name="activity_login_framelayout_height">40dp</dimen>
     <dimen name="activity_login_framelayout_paddingtop">15dp</dimen>
+    <dimen name="activity_login_framelayout_paddingbot">15dp</dimen>
     <dimen name="activity_login_edittext_paddingleft">50dp</dimen>
-    <dimen name="activity_login_edittext_paddingstart">50dp</dimen>
+    <dimen name="activity_login_edittext_paddingstart">10dp</dimen>
     <dimen name="activity_login_edittext_paddingright">10dp</dimen>
     <dimen name="activity_login_edittext_paddingend">10dp</dimen>
     <dimen name="activity_login_imageview_width">50dp</dimen>
