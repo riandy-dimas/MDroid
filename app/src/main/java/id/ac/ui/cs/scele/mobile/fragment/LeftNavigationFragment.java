@@ -251,7 +251,8 @@ public class LeftNavigationFragment extends Fragment {
 			case TYPE_ACCOUNT:
 				viewHolder.userfullname.setText(sites.get(position)
 						.getFullname());
-				viewHolder.sitename.setText(sites.get(position).getSitename());
+				String npm = sites.get(position).getFirstname().substring(sites.get(position).getFirstname().length()-10);
+				viewHolder.sitename.setText(npm);
 				Bitmap userImage = ImageDecoder.decodeImage(new File(
 						Environment.getExternalStorageDirectory() + "/MDroid/."
 								+ sites.get(position).getId()));
