@@ -20,8 +20,16 @@
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/moodle_color</item>
 
+        <item name="android:titleTextStyle">@style/MyActionBar.Solid.Ribbit.TitleTextStyle</item>
+
+
         <!-- Support library compatibility -->
-        <item name="background">@color/moodle_color</item>
+        <item name="background">@color/scele_black</item>
+    </style>
+
+    <style name="MyActionBar.Solid.Ribbit.TitleTextStyle"
+        parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>
