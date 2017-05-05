@@ -6,8 +6,8 @@
     <color name="transparent_white">#55ffffff</color>
     <color name="transparent_grey">#ddeeeeee</color>
     <color name="transparent_black">#22000000</color>
-    <color name="moodle_color">#ff8800</color>
-    <color name="moodle_click_color">#ffa000</color>
+    <!--<color name="moodle_color">#ff8800</color>-->
+    <!--<color name="moodle_click_color">#ffa000</color>-->
     <color name="grey1">#111111</color>
     <color name="grey2">#222222</color>
     <color name="grey3">#333333</color>
@@ -65,7 +65,7 @@
 
     <!-- Scele color -->
     <color name="scele_black">#333333</color>
-    <color name="scele_orange">#e2a500</color>
-    <color name="scele_yellow">#FEC107</color>
+    <color name="moodle_click_color">#e2a500</color>
+    <color name="moodle_color">#ffc107</color>
 
 </resources>

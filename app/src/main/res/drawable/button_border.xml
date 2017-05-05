@@ -3,5 +3,5 @@
     android:shape="rectangle">
     <solid android:color="@color/scele_black" />
     <corners android:radius="5dp" />
-    <stroke android:width="3px" android:color="@color/scele_orange" />
+    <stroke android:width="3px" android:color="@color/moodle_click_color" />
 </shape>

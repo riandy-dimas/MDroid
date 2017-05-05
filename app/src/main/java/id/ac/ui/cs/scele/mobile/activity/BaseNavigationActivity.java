@@ -96,7 +96,6 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 //				getSupportActionBar().setTitle(MenuTitle);
 			}
 		};
-
 		// Set the drawer toggle as the DrawerListener
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
