@@ -64,7 +64,7 @@ public class MainActivity extends BaseNavigationActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.action_dashboard:
-                            Toast.makeText(getBaseContext(), "DASHBOARD",
+                            Toast.makeText(getBaseContext(), "COURSE",
                                     Toast.LENGTH_LONG).show();
                             fragment = new CourseNewFragment();
                             break;
