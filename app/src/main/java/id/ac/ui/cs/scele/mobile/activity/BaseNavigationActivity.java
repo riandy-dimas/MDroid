@@ -46,7 +46,7 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getSupportActionBar().setTitle("");
-		getSupportActionBar().setElevation(0);
+		getSupportActionBar().setElevation(5);
 
 		// Setup billing
 //		billing = new BillingProcessor(this, Param.BILLING_LICENSE_KEY,
