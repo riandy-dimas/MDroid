@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="bottom"
     sothree:umanoAnchorPoint="0.6"
-    sothree:umanoPanelHeight="80dp"
+    sothree:umanoPanelHeight="92dp"
     sothree:umanoShadowHeight="4dp"
     sothree:umanoParallaxOffset="100dp"
     sothree:umanoDragView="@+id/dragView"
@@ -28,6 +28,7 @@
             android:orientation="vertical"
             android:background="@color/grey15">
 
+
             <TextView
                 android:id="@+id/calender_month"
                 android:layout_width="match_parent"
@@ -38,8 +39,9 @@
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
                 android:text="Bulan"
-                android:background="@color/grey15"
-                />
+                android:background="@color/grey15">
+
+            </TextView>
 
             <com.github.sundeepk.compactcalendarview.CompactCalendarView
                 android:id="@+id/calendar_view"
@@ -47,11 +49,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="16dp"
+                android:clickable="false"
+                app:compactCalendarCurrentSelectedDayIndicatorStyle="no_fill_large_indicator"
                 app:compactCalendarTextSize="14sp"
                 app:compactCalendarBackgroundColor="@color/grey15"
                 app:compactCalendarTextColor="#000"
                 app:compactCalendarOtherMonthDaysTextColor="@color/grey10"
-                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/moodle_click_color"
+                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/grey15"
                 app:compactCalendarCurrentDayBackgroundColor="@color/moodle_color"
                 app:compactCalendarMultiEventIndicatorColor="@color/refresh_red"
                 app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
@@ -70,7 +74,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+        android:background="@color/scele_black"
         android:orientation="vertical"
         android:clickable="true"
         android:focusable="false"
@@ -78,12 +82,17 @@
 
         <TextView
             android:id="@+id/text_jadwal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jadwal"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="16sp"
+            android:text="@string/text_schedule"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:background="@color/scele_black"
+            android:textAllCaps="true"
             android:textStyle="bold"/>
 
         <fragment

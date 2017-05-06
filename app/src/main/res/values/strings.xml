@@ -14,6 +14,9 @@
     <string name="scele_url">https://scele.cs.ui.ac.id</string>
     <string name="scele_test_url">https://scele-test.cs.ui.ac.id</string>
 
+    <!-- Calendar Fragment -->
+    <string name="text_schedule">Schedule</string>
+
     <!-- Bottom menu navigation -->
     <string name="bot_nav_dashboard">Course</string>
     <string name="bot_nav_calendar">Calendar</string>
