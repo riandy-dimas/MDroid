@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,6 +31,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
+
 public class CalenderFragment extends Fragment implements OnRefreshListener {
 	Context context;
 	int courseid = 0;
@@ -39,6 +43,7 @@ public class CalenderFragment extends Fragment implements OnRefreshListener {
 	ArrayList<CalenderObject> listObjects = new ArrayList<>();
 	LinearLayout calenderEmptyLayout;
 	SwipeRefreshLayout swipeLayout;
+    CompactCalendarView calendarView;
 
 	/**
 	 * Don't use this constructor
@@ -66,7 +71,8 @@ public class CalenderFragment extends Fragment implements OnRefreshListener {
 		ListView eventList = (ListView) rootView
 				.findViewById(R.id.list_calendar);
 
-		session = new SessionSetting(context);
+
+        session = new SessionSetting(context);
 		if (courseid == 0)
 			mEvents = MoodleEvent.find(MoodleEvent.class, "siteid = ?",
 					String.valueOf(session.getCurrentSiteId()));

@@ -9,10 +9,44 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/grey15">
+
+        <TextView
+            android:id="@+id/calender_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="Bulan"
+            android:background="@color/grey15"
+            />
+
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            android:id="@+id/calendar_view"
+            android:layout_below="@id/calender_month"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            app:compactCalendarTextSize="14sp"
+            app:compactCalendarBackgroundColor="@color/grey15"
+            app:compactCalendarTextColor="#000"
+            app:compactCalendarOtherMonthDaysTextColor="@color/grey10"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="@color/moodle_click_color"
+            app:compactCalendarCurrentDayBackgroundColor="@color/moodle_color"
+            app:compactCalendarMultiEventIndicatorColor="@color/refresh_red"
+            app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
+            app:compactCalendarTargetHeight="300dp"
+            app:compactCalendarDisplayOtherMonthDays="true"
+            />
 
         <fragment
             android:id="@+id/calender_fragment"
+            android:layout_below="@id/calendar_view"
             android:name="id.ac.ui.cs.scele.mobile.fragment.CalenderFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
