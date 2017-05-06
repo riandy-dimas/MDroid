@@ -12,6 +12,7 @@ import android.text.format.DateFormat;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.util.Date;
 import java.util.List;
@@ -28,6 +29,7 @@ public class CalendarNewFragment extends Fragment {
 
     CompactCalendarView calendarView;
     TextView calendarMonth;
+    SlidingUpPanelLayout slidingUpPanelLayout;
 
     public CalendarNewFragment() {
     }
@@ -39,6 +41,25 @@ public class CalendarNewFragment extends Fragment {
 
         calendarView = (CompactCalendarView) view.findViewById(R.id.calendar_view);
         calendarMonth = (TextView) view.findViewById(R.id.calender_month);
+        slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layout);
+
+        slidingUpPanelLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener(){
+
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+
+            }
+
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+                if(newState.name().equals("EXPANDED")){
+                    slidingUpPanelLayout.setEnabled(true);
+                    slidingUpPanelLayout.setTouchEnabled(false);
+                    Log.d("dims","set");
+                }
+            }
+        });
+
 
         Event event1 = new Event(Color.GRAY, 1493981969000L, "Some extra data that I want to store.");
         Event event2 = new Event(Color.GRAY, 1493981969000L, "yeyd");
@@ -61,4 +82,6 @@ public class CalendarNewFragment extends Fragment {
 
         return view;
     }
+
+
 }

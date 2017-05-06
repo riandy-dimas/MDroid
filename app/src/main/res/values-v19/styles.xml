@@ -19,6 +19,7 @@
     <!-- ActionBar styles -->
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/moodle_color</item>
+        <item name="android:windowActionBarOverlay">true</item>
 
         <item name="android:titleTextStyle">@style/MyActionBar.Solid.Ribbit.TitleTextStyle</item>
 

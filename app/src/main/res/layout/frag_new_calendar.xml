@@ -1,59 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoAnchorPoint="0.6"
+    sothree:umanoPanelHeight="80dp"
+    sothree:umanoShadowHeight="4dp"
+    sothree:umanoParallaxOffset="100dp"
+    sothree:umanoDragView="@+id/dragView"
+    sothree:umanoOverlay="true"
+    sothree:umanoScrollableView="@+id/calender_fragment">
 
-    <!-- Main content -->
-
-    <RelativeLayout
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/grey15">
+        android:gravity="center"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/calender_month"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:gravity="center"
-            android:text="Bulan"
-            android:background="@color/grey15"
-            />
+        <!-- Main content -->
 
-        <com.github.sundeepk.compactcalendarview.CompactCalendarView
-            android:id="@+id/calendar_view"
-            android:layout_below="@id/calender_month"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="16dp"
-            app:compactCalendarTextSize="14sp"
-            app:compactCalendarBackgroundColor="@color/grey15"
-            app:compactCalendarTextColor="#000"
-            app:compactCalendarOtherMonthDaysTextColor="@color/grey10"
-            app:compactCalendarCurrentSelectedDayBackgroundColor="@color/moodle_click_color"
-            app:compactCalendarCurrentDayBackgroundColor="@color/moodle_color"
-            app:compactCalendarMultiEventIndicatorColor="@color/refresh_red"
-            app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
-            app:compactCalendarTargetHeight="300dp"
-            app:compactCalendarDisplayOtherMonthDays="true"
-            />
+            android:orientation="vertical"
+            android:background="@color/grey15">
+
+            <TextView
+                android:id="@+id/calender_month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="Bulan"
+                android:background="@color/grey15"
+                />
+
+            <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                android:id="@+id/calendar_view"
+                android:layout_below="@id/calender_month"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                app:compactCalendarTextSize="14sp"
+                app:compactCalendarBackgroundColor="@color/grey15"
+                app:compactCalendarTextColor="#000"
+                app:compactCalendarOtherMonthDaysTextColor="@color/grey10"
+                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/moodle_click_color"
+                app:compactCalendarCurrentDayBackgroundColor="@color/moodle_color"
+                app:compactCalendarMultiEventIndicatorColor="@color/refresh_red"
+                app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
+                app:compactCalendarTargetHeight="300dp"
+                app:compactCalendarDisplayOtherMonthDays="true"
+                />
+
+        </RelativeLayout>
+
+        <!-- Navigations -->
+
+        <include layout="@layout/common_left_navigation" />
+
+    </android.support.v4.widget.DrawerLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="false"
+        android:id="@+id/dragView">
+
+        <TextView
+            android:id="@+id/text_jadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jadwal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
         <fragment
             android:id="@+id/calender_fragment"
-            android:layout_below="@id/calendar_view"
             android:name="id.ac.ui.cs.scele.mobile.fragment.CalenderFragment"
             android:layout_width="match_parent"
+            android:gravity="center|top"
             android:layout_height="match_parent"/>
-    </RelativeLayout>
 
-    <!-- Navigations -->
+    </LinearLayout>
 
-    <include layout="@layout/common_left_navigation" />
-
-</android.support.v4.widget.DrawerLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

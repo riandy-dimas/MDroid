@@ -20,6 +20,7 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.text.Html;
@@ -33,6 +34,7 @@ import android.widget.TextView;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.sothree.slidinguppanel.ScrollableViewHelper;
 
 public class CalenderFragment extends Fragment implements OnRefreshListener {
 	Context context;
@@ -43,7 +45,7 @@ public class CalenderFragment extends Fragment implements OnRefreshListener {
 	ArrayList<CalenderObject> listObjects = new ArrayList<>();
 	LinearLayout calenderEmptyLayout;
 	SwipeRefreshLayout swipeLayout;
-    CompactCalendarView calendarView;
+    ListView eventList;
 
 	/**
 	 * Don't use this constructor
@@ -68,7 +70,7 @@ public class CalenderFragment extends Fragment implements OnRefreshListener {
 				false);
 		calenderEmptyLayout = (LinearLayout) rootView
 				.findViewById(R.id.calender_empty_layout);
-		ListView eventList = (ListView) rootView
+		eventList = (ListView) rootView
 				.findViewById(R.id.list_calendar);
 
 
@@ -85,6 +87,8 @@ public class CalenderFragment extends Fragment implements OnRefreshListener {
 		calendarListAdapter = new CalendarListAdapter(context);
 		((StickyListView) eventList).setShadowVisible(false);
 		eventList.setAdapter(calendarListAdapter);
+
+
 
 		swipeLayout = (SwipeRefreshLayout) rootView
 				.findViewById(R.id.swipe_refresh);
@@ -328,4 +332,7 @@ public class CalenderFragment extends Fragment implements OnRefreshListener {
 				session.getCurrentSiteId()).execute("");
 	}
 
+
+
 }
+
