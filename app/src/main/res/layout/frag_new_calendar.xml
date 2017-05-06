@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="16dp"
-                android:clickable="false"
+                android:clickable="true"
                 app:compactCalendarCurrentSelectedDayIndicatorStyle="no_fill_large_indicator"
                 app:compactCalendarTextSize="14sp"
                 app:compactCalendarBackgroundColor="@color/grey15"

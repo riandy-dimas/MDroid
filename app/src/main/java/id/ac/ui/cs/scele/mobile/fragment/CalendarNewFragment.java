@@ -47,6 +47,7 @@ public class CalendarNewFragment extends Fragment {
         textJadwal = (TextView) view.findViewById(R.id.text_jadwal);
 
 
+
         slidingUpPanelLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener(){
 
             @Override
@@ -57,7 +58,6 @@ public class CalendarNewFragment extends Fragment {
             @Override
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
                 if(newState.name().equals("EXPANDED")){
-                    slidingUpPanelLayout.setEnabled(true);
                     slidingUpPanelLayout.setTouchEnabled(false);
                     textJadwal.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -73,6 +73,9 @@ public class CalendarNewFragment extends Fragment {
                             slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
                         }
                     });
+                } else {
+                    slidingUpPanelLayout.setTouchEnabled(true);
+
                 }
             }
         });
@@ -88,11 +91,13 @@ public class CalendarNewFragment extends Fragment {
             @Override
             public void onDayClick(Date dateClicked) {
                 List<Event> events = calendarView.getEvents(dateClicked);
+                slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                 Log.d(TAG, "Day was clicked: " + dateClicked + " with events " + events);
             }
 
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
+                slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                 calendarMonth.setText(DateFormat.format("MMMM",calendarView.getFirstDayOfCurrentMonth()));
             }
         });
