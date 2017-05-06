@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class CalendarNewFragment extends Fragment {
 
     CompactCalendarView calendarView;
     TextView calendarMonth;
+    TextView textJadwal;
     SlidingUpPanelLayout slidingUpPanelLayout;
 
     public CalendarNewFragment() {
@@ -42,6 +44,8 @@ public class CalendarNewFragment extends Fragment {
         calendarView = (CompactCalendarView) view.findViewById(R.id.calendar_view);
         calendarMonth = (TextView) view.findViewById(R.id.calender_month);
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layout);
+        textJadwal = (TextView) view.findViewById(R.id.text_jadwal);
+
 
         slidingUpPanelLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener(){
 
@@ -55,7 +59,20 @@ public class CalendarNewFragment extends Fragment {
                 if(newState.name().equals("EXPANDED")){
                     slidingUpPanelLayout.setEnabled(true);
                     slidingUpPanelLayout.setTouchEnabled(false);
-                    Log.d("dims","set");
+                    textJadwal.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                        }
+                    });
+                } else if(newState.name().equals("COLLAPSED")) {
+                    slidingUpPanelLayout.setTouchEnabled(true);
+                    textJadwal.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+                        }
+                    });
                 }
             }
         });
