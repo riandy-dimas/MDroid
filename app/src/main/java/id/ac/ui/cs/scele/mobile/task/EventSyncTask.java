@@ -122,7 +122,7 @@ public class EventSyncTask {
 						"courseid = ? and siteid = ?",
 						String.valueOf(event.getCourseid()), String.valueOf(siteid));
 				if (!dbCourses.isEmpty())
-					event.setCoursename(dbCourses.get(0).getShortname());
+					event.setCoursename(dbCourses.get(0).getFullname());
 				if (!dbEvents.isEmpty())
 					event.setId(dbEvents.get(0).getId());
 
