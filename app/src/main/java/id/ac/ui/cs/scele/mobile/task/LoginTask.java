@@ -5,6 +5,7 @@ import id.ac.ui.cs.scele.mobile.activity.CourseActivity;
 import id.ac.ui.cs.scele.mobile.activity.MainActivity;
 import id.ac.ui.cs.scele.mobile.activity.WebservicesoffActivity;
 import id.ac.ui.cs.scele.mobile.helper.SessionSetting;
+import id.ac.ui.cs.scele.mobile.model.MoodleCourse;
 import id.ac.ui.cs.scele.mobile.model.MoodleSiteInfo;
 import id.ac.ui.cs.scele.mobile.model.MoodleToken;
 import id.ac.ui.cs.scele.mobile.moodlerest.MoodleRestSiteInfo;
@@ -16,6 +17,9 @@ import android.os.AsyncTask;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginTask extends AsyncTask<String, String, Boolean> {
 	String username;
@@ -236,6 +240,7 @@ public class LoginTask extends AsyncTask<String, String, Boolean> {
 	private Boolean getMessagesContacts() {
 		MessageSyncTask mst = new MessageSyncTask(mUrl, token, siteInfo.getId());
 		ContactSyncTask cst = new ContactSyncTask(mUrl, token, siteInfo.getId());
+		EventSyncTask est = new EventSyncTask(mUrl, token, siteInfo.getId());
 
 		publishProgress(context.getString(R.string.login_prog_sync_message));
 		Boolean messageSync = mst.syncMessages(siteInfo.getUserid());
@@ -243,8 +248,16 @@ public class LoginTask extends AsyncTask<String, String, Boolean> {
 		publishProgress(context.getString(R.string.login_prog_sync_contact));
 		Boolean contactSync = cst.syncAllContacts();
 
+		publishProgress("Syncing events");
+		ArrayList<String> cIds = new ArrayList<>();
+		List<MoodleCourse> mCourses = MoodleCourse.find(MoodleCourse.class,
+				"siteid = ?", String.valueOf(siteInfo.getId()));
+		for (int i = 0; i < mCourses.size(); i++)
+			cIds.add(mCourses.get(i).getCourseid() + "");
+		Boolean eventSync = est.syncEvents(cIds);
+
 		// Success on user's course sync is what matters
-		return messageSync && contactSync;
+		return messageSync && contactSync && eventSync;
 	}
 
 	@Override
