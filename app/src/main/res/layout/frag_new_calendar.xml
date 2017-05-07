@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    sothree:umanoAnchorPoint="0.6"
-    sothree:umanoPanelHeight="92dp"
+    sothree:umanoAnchorPoint="0.7"
+    sothree:umanoPanelHeight="96dp"
     sothree:umanoShadowHeight="4dp"
     sothree:umanoParallaxOffset="100dp"
     sothree:umanoDragView="@+id/dragView"
@@ -23,6 +23,7 @@
         <!-- Main content -->
 
         <RelativeLayout
+            android:id="@+id/calendar_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -49,13 +50,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="16dp"
-                android:clickable="true"
+                android:clickable="false"
                 app:compactCalendarCurrentSelectedDayIndicatorStyle="no_fill_large_indicator"
                 app:compactCalendarTextSize="14sp"
                 app:compactCalendarBackgroundColor="@color/grey15"
                 app:compactCalendarTextColor="#000"
                 app:compactCalendarOtherMonthDaysTextColor="@color/grey10"
-                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/grey15"
                 app:compactCalendarCurrentDayBackgroundColor="@color/moodle_color"
                 app:compactCalendarMultiEventIndicatorColor="@color/refresh_red"
                 app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
@@ -74,7 +74,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/scele_black"
+        android:background="@color/white"
         android:orientation="vertical"
         android:clickable="true"
         android:focusable="false"
@@ -90,8 +90,8 @@
             android:layout_marginBottom="14dp"
             android:layout_marginTop="14dp"
             android:textSize="14sp"
-            android:textColor="@color/white"
-            android:background="@color/scele_black"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:textAllCaps="true"
             android:textStyle="bold"/>
 
