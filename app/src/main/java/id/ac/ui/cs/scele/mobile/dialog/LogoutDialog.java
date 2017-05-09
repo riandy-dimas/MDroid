@@ -62,7 +62,8 @@ public class LogoutDialog extends Dialog implements
 
 		// Set values
 		userfullname.setText(siteinfo.getFullname());
-		sitename.setText(siteinfo.getSitename());
+		String npm = siteinfo.getFirstname().substring(siteinfo.getFirstname().length()-10);
+		sitename.setText(npm);
 		Bitmap userImage = ImageDecoder
 				.decodeImage(new File(Environment.getExternalStorageDirectory()
 						+ "/MDroid/." + siteinfo.getId()));

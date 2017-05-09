@@ -10,6 +10,7 @@ import id.ac.ui.cs.scele.mobile.activity.LoginActivity;
 import id.ac.ui.cs.scele.mobile.activity.MessagingActivity;
 import id.ac.ui.cs.scele.mobile.activity.NotificationActivity;
 import id.ac.ui.cs.scele.mobile.activity.SettingsActivity;
+import id.ac.ui.cs.scele.mobile.dialog.LogoutDialog;
 import id.ac.ui.cs.scele.mobile.helper.AppInterface.DrawerStateInterface;
 import id.ac.ui.cs.scele.mobile.helper.ImageDecoder;
 import id.ac.ui.cs.scele.mobile.helper.SessionSetting;
@@ -46,20 +47,20 @@ public class LeftNavigationFragment extends Fragment {
 	SessionSetting session;
 
 	String[] moodleMenuItems = new String[] {
-            "Courses",
+      //      "Courses",
      //       "Messaging",
-			"Contacts",
+	//		"Contacts",
      //       "Calender",
      //       "Forums",
      //       "Notifications"
 	};
-	String[] appMenuItems = new String[] { "Request features", "Settings",
+	String[] appMenuItems = new String[] { "Logout", "Settings",
 			"Add account" };
 
 	int[] moodleMenuIcons = new int[] {
-            R.drawable.icon_school_greyscale,
+     //       R.drawable.icon_school_greyscale,
 	//		R.drawable.icon_message_greyscale,
-			R.drawable.icon_people_greyscale2,
+	//		R.drawable.icon_people_greyscale2,
 	//		R.drawable.icon_today_greyscale,
 	//		R.drawable.icon_forum_greyscale,
 	//		R.drawable.icon_notifications_greyscale
@@ -129,8 +130,9 @@ public class LeftNavigationFragment extends Fragment {
 					switch (position - sites.size() - moodleMenuItems.length
 							- 2) {
 					case 0:
-						context.startActivity(new Intent(context,
-								DonationActivity.class));
+						LogoutDialog lod = new LogoutDialog(getContext(),
+								session.getCurrentSiteId());
+						lod.show();
 						break;
 					case 1:
 						context.startActivity(new Intent(context,
