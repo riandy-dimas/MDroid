@@ -16,12 +16,12 @@
         android:title="@string/bot_nav_calendar"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/action_messages"
-        android:enabled="true"
-        android:icon="@drawable/ic_chat_black_24dp"
-        android:title="@string/bot_nav_messages"
-        app:showAsAction="ifRoom" />
+    <!--<item-->
+        <!--android:id="@+id/action_messages"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/ic_chat_black_24dp"-->
+        <!--android:title="@string/bot_nav_messages"-->
+        <!--app:showAsAction="ifRoom" />-->
 
     <item
         android:id="@+id/action_forum"

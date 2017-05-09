@@ -73,11 +73,11 @@ public class MainActivity extends BaseNavigationActivity {
                                     Toast.LENGTH_LONG).show();
                             fragment = new CalendarNewFragment();
                             break;
-                        case R.id.action_messages:
-                            Toast.makeText(getBaseContext(), "PESAN",
-                                    Toast.LENGTH_LONG).show();
-                            fragment = new MessagingNewFragment();
-                            break;
+//                        case R.id.action_messages:
+//                            Toast.makeText(getBaseContext(), "PESAN",
+//                                    Toast.LENGTH_LONG).show();
+//                            fragment = new MessagingNewFragment();
+//                            break;
                         case R.id.action_forum:
                             Toast.makeText(getBaseContext(), "FORUM",
                                     Toast.LENGTH_LONG).show();
