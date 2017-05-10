@@ -10,6 +10,14 @@
         android:background="@color/card_listview_bg"
         android:orientation="vertical" >
 
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/card_listview_bg"
+            android:id="@+id/course_summary"
+            />
+
         <id.ac.ui.cs.scele.mobile.view.StickyListView
             android:id="@+id/list_course_content"
             android:layout_width="match_parent"

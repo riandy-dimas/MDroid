@@ -238,15 +238,15 @@ public class LoginTask extends AsyncTask<String, String, Boolean> {
 	 * @author Praveen Kumar Pendyala (praveen@praveenkumar.co.in)
 	 */
 	private Boolean getMessagesContacts() {
-		MessageSyncTask mst = new MessageSyncTask(mUrl, token, siteInfo.getId());
-		ContactSyncTask cst = new ContactSyncTask(mUrl, token, siteInfo.getId());
+		//MessageSyncTask mst = new MessageSyncTask(mUrl, token, siteInfo.getId());
+		//ContactSyncTask cst = new ContactSyncTask(mUrl, token, siteInfo.getId());
 		EventSyncTask est = new EventSyncTask(mUrl, token, siteInfo.getId());
 
-		publishProgress(context.getString(R.string.login_prog_sync_message));
-		Boolean messageSync = mst.syncMessages(siteInfo.getUserid());
+//		publishProgress(context.getString(R.string.login_prog_sync_message));
+//		Boolean messageSync = mst.syncMessages(siteInfo.getUserid());
 
-		publishProgress(context.getString(R.string.login_prog_sync_contact));
-		Boolean contactSync = cst.syncAllContacts();
+//		publishProgress(context.getString(R.string.login_prog_sync_contact));
+//		Boolean contactSync = cst.syncAllContacts();
 
 		publishProgress("Syncing events");
 		ArrayList<String> cIds = new ArrayList<>();
@@ -257,7 +257,7 @@ public class LoginTask extends AsyncTask<String, String, Boolean> {
 		Boolean eventSync = est.syncEvents(cIds);
 
 		// Success on user's course sync is what matters
-		return messageSync && contactSync && eventSync;
+		return eventSync;
 	}
 
 	@Override
