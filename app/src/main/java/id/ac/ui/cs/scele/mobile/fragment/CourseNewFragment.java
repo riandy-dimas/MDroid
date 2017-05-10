@@ -18,7 +18,7 @@ import id.ac.ui.cs.scele.mobile.view.SlidingTabLayout;
  */
 
 public class CourseNewFragment extends Fragment {
-    private static final String[] TABS = { "My Courses", "Archived Courses" };
+    private static final String[] TABS = { "Starred Courses", "All Courses" };
 
     public CourseNewFragment() {
     }
@@ -57,7 +57,7 @@ public class CourseNewFragment extends Fragment {
 			 * interface may not work. Bundles are passed again on onResume
 			 */
             switch (position) {
-                case 0:
+                case 1:
                     CourseFragment userCourses = new CourseFragment();
 
                     // Set the listing type to only user courses in bundle.
@@ -66,7 +66,7 @@ public class CourseNewFragment extends Fragment {
                     userCourses.setArguments(bundle);
 
                     return userCourses;
-                case 1:
+                case 0:
                     CourseFragment favCourses = new CourseFragment();
 
                     // Set the listing type to only user courses in bundle.

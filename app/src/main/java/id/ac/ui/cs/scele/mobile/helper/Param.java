@@ -7,7 +7,7 @@ package id.ac.ui.cs.scele.mobile.helper;
  * 
  */
 public class Param {
-	public static final String DEFAULT_MSG_SIGN = "Sent from MDroid";
+	public static final String DEFAULT_MSG_SIGN = "Sent from SCeLE Mobile";
 	public static final String STARTAPP_DEV_ID = "112268240";
 	public static final String STARTAPP_APP_ID = "212832712";
 	/**
@@ -21,7 +21,7 @@ public class Param {
 
 	// Ads hiding
 	public static final int maxAdsHideCount = 3;
-	public static Boolean hideAdsForSession = false;
+	public static Boolean hideAdsForSession = true;
 
 	// Billing related
 	public static final String BILLING_DONATION_PID = "in.co.praveenkumar.mdroid.donate";

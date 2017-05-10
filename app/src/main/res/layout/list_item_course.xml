@@ -36,7 +36,8 @@
                 android:paddingLeft="5dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:src="@drawable/icon_favorite_outline" />
+                android:tint="@color/moodle_color"
+                android:src="@drawable/ic_star_border_black_24dp" />
 
             <TextView
                 android:id="@+id/list_course_shortname"

@@ -145,10 +145,10 @@ public class CourseFragment extends Fragment implements OnRefreshListener {
 			viewHolder.shortname.setText(mCourse.getShortname());
 			viewHolder.fullname.setText(mCourse.getFullname());
 			if (mCourses.get(position).getIsFavCourse())
-				viewHolder.favIcon.setImageResource(R.drawable.icon_favorite);
+				viewHolder.favIcon.setImageResource(R.drawable.ic_star_black_24dp);
 			else
 				viewHolder.favIcon
-						.setImageResource(R.drawable.icon_favorite_outline);
+						.setImageResource(R.drawable.ic_star_border_black_24dp);
 
 			convertView.setOnClickListener(new OnClickListener() {
 				@Override

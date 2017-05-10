@@ -400,8 +400,7 @@ public class MDroidService extends Service {
 
 		final String spaces = "     ";
 		String contentTitle = total + " updates for " + site.getFirstname();
-		String contentText = "Contents : " + contentCount + spaces
-				+ " Messages : " + messageCount;
+		String contentText = "Contents : " + contentCount;
 		String subText = "Forums : " + totalForums + spaces + " Others : "
 				+ totalOthers;
 		String contentInfo = site.getSitename();
@@ -412,8 +411,8 @@ public class MDroidService extends Service {
 			showNotification(contentTitle, contentText, subText, contentInfo,
 					true, largeIcon, site.getId());
 		else if (forceCheck)
-			showNotification("No updated found", "Did you star your courses ?",
-					"Open courses section to star a course", "", true,
+			showNotification("No updated found", "If you have not star a course",
+					"Open all course tab on Course section to star a course", "", true,
 					largeIcon, site.getId());
 
 	}

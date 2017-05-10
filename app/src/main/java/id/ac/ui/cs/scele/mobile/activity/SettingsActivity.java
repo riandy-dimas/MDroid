@@ -32,9 +32,6 @@ public class SettingsActivity extends PreferenceActivity implements
 		super.onCreate(savedInstanceState);
 		setTitle("Settings");
 
-		// Send a tracker
-		((ApplicationClass) getApplication())
-				.sendScreen(Param.GA_SCREEN_SETTING);
 
 		// Setup billing
 		session = new SessionSetting(this);
@@ -56,6 +53,7 @@ public class SettingsActivity extends PreferenceActivity implements
 
 		findPreference("messagingSignature").setEnabled(true);
 		findPreference("notifications").setEnabled(true);
+		findPreference("hideAds").setEnabled(true);
 
 
 		// Add preference click / change listeners
@@ -152,9 +150,6 @@ public class SettingsActivity extends PreferenceActivity implements
 				return false;
 			}
 
-			// Send a tracker event
-			((ApplicationClass) getApplication()).sendEvent(
-					Param.GA_EVENT_CAT_SETTING, Param.GA_EVENT_SETTING_HIDEADS);
 
 			// Increment count only if he is indenting to hide ads
 			if (!Param.hideAdsForSession)
