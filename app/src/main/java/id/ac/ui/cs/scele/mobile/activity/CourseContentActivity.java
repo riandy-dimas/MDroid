@@ -25,7 +25,9 @@ public class CourseContentActivity extends BaseNavigationActivity {
 	private int courseid;
 	private ViewPager viewPager;
     protected NavigationView navigationView;
-    private static final String[] TABS = { "Contents", "Forums", "Calendar",
+    private static final String[] TABS = { "Contents",
+//			"Forums",
+//			"Calendar",
 			"Participants" };
 
 	@Override
@@ -57,7 +59,7 @@ public class CourseContentActivity extends BaseNavigationActivity {
 		getSupportActionBar().setIcon(R.drawable.icon_school);
 
 		FragmentPagerAdapter mAdapter = new CourseContentTabsAdapter(
-				getSupportFragmentManager());
+				getSupportFragmentManager(), mCourse);
 
 		viewPager = (ViewPager) findViewById(R.id.course_content_pager);
 		viewPager.setOffscreenPageLimit(TABS.length);
@@ -68,8 +70,10 @@ public class CourseContentActivity extends BaseNavigationActivity {
 	}
 
 	class CourseContentTabsAdapter extends FragmentPagerAdapter {
-		public CourseContentTabsAdapter(FragmentManager fm) {
+		String courseSummary;
+		public CourseContentTabsAdapter(FragmentManager fm, MoodleCourse moodleCourse) {
 			super(fm);
+			courseSummary = moodleCourse.getSummary() == null ? "" : moodleCourse.getSummary();
 		}
 
 		@Override
@@ -79,18 +83,19 @@ public class CourseContentActivity extends BaseNavigationActivity {
 				// Course Content
                 ContentFragment contentFragment = new ContentFragment();
                 contentFragment.setCourseid(courseid);
+				contentFragment.setCourseSummary(courseSummary);
 				return contentFragment;
+//			case 1:
+//				// Course Forum
+//                ForumFragment forumFragment = new ForumFragment();
+//                forumFragment.setCourseid(courseid);
+//				return forumFragment;
+//			case 2:
+//				// Course Calendar
+//				CalenderFragment calenderFragment = new CalenderFragment();
+//				calenderFragment.setCourseid(courseid);
+//				return calenderFragment;
 			case 1:
-				// Course Forum
-                ForumFragment forumFragment = new ForumFragment();
-                forumFragment.setCourseid(courseid);
-				return forumFragment;
-			case 2:
-				// Course Calendar
-				CalenderFragment calenderFragment = new CalenderFragment();
-				calenderFragment.setCourseid(courseid);
-				return calenderFragment;
-			case 3:
 				// Course Participants
                 ParticipantFragment participantFragment = new ParticipantFragment();
                 participantFragment.setCourseid(courseid);

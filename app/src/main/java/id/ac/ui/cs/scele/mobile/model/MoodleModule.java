@@ -45,6 +45,9 @@ public class MoodleModule extends SugarRecord<MoodleModule> {
 	@SerializedName("indent")
 	int indent;
 
+	@SerializedName("instance")
+	int instance;
+
 	@Ignore
 	@SerializedName("contents")
 	ArrayList<MoodleModuleContent> contents;
@@ -54,6 +57,10 @@ public class MoodleModule extends SugarRecord<MoodleModule> {
 	int sectionid;
 	int courseid;
 	Long siteid;
+
+	public int getInstance(){
+		return instance;
+	}
 
 	/**
 	 * module or activity id
@@ -235,8 +242,8 @@ public class MoodleModule extends SugarRecord<MoodleModule> {
 	/**
 	 * Set the module parent section Moodle id
 	 * 
-	 * @param section
-	 *            .id
+	 * @param sectionid
+	 *
 	 */
 	public void setSectionid(int sectionid) {
 		this.sectionid = sectionid;
@@ -249,6 +256,10 @@ public class MoodleModule extends SugarRecord<MoodleModule> {
 	 */
 	public void setSiteid(Long siteid) {
 		this.siteid = siteid;
+	}
+
+	public void setInstance(int instance){
+		this.instance = instance;
 	}
 
 }

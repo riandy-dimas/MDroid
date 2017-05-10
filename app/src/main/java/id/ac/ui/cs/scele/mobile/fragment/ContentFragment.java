@@ -2,6 +2,7 @@ package id.ac.ui.cs.scele.mobile.fragment;
 
 import id.ac.ui.cs.scele.R;
 import id.ac.ui.cs.scele.mobile.activity.AppBrowserActivity;
+import id.ac.ui.cs.scele.mobile.activity.DiscussionActivity;
 import id.ac.ui.cs.scele.mobile.helper.FileOpener;
 import id.ac.ui.cs.scele.mobile.helper.IconMap;
 import id.ac.ui.cs.scele.mobile.helper.SessionSetting;
@@ -44,6 +45,8 @@ public class ContentFragment extends Fragment implements OnRefreshListener {
 	ArrayList<CourseContentObject> listObjects = new ArrayList<>();
 	LinearLayout contentEmptyLayout;
 	SwipeRefreshLayout swipeLayout;
+	String courseSummary;
+	TextView courseSummaryText;
 
 	/**
 	 * This constructor is required to prevent exceptions on app usage. Don't
@@ -59,6 +62,10 @@ public class ContentFragment extends Fragment implements OnRefreshListener {
 	 */
 	public void setCourseid(int courseid) {
 		this.courseid = courseid;
+	}
+
+	public void setCourseSummary(String summary){
+		this.courseSummary = summary;
 	}
 
 	@Override
@@ -88,6 +95,9 @@ public class ContentFragment extends Fragment implements OnRefreshListener {
 				.findViewById(R.id.swipe_refresh);
 		Workaround.linkSwipeRefreshAndListView(swipeLayout, contentList);
 		swipeLayout.setOnRefreshListener(this);
+
+//		courseSummaryText = (TextView) rootView.findViewById(R.id.course_summary);
+//		courseSummaryText.setText(courseSummary);
 
 		new listCoursesThread(session.getmUrl(), session.getToken(), courseid,
 				session.getCurrentSiteId()).execute("");
@@ -246,6 +256,13 @@ public class ContentFragment extends Fragment implements OnRefreshListener {
 							+ "/course/view.php?id=" + courseid;
 					modurl = (modurl == null) ? courseurl : modurl;
 					i.putExtra("url", modurl);
+
+					if (module.getModname().contentEquals("forum")) {
+						Intent f = new Intent(context, DiscussionActivity.class);
+						f.putExtra("forumid", module.getInstance());
+						context.startActivity(f);
+						return;
+					}
 
 					if (!module.getModname().contentEquals("resource")) {
 						context.startActivity(i);
