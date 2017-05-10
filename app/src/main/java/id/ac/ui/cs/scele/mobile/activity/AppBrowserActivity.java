@@ -27,8 +27,8 @@ public class AppBrowserActivity extends BaseNavigationActivity {
 
     MoodleSiteInfo mSiteInfo;
 	WebView mBrowser;
-	String DEFAULT_URL = "http://mdroid.praveenkumar.co.in";
-	String DEFAULT_TITLE = "MDroid browser";
+	String DEFAULT_URL = "https://scele-test.ui.ac.id";
+	String DEFAULT_TITLE = "SCeLE Mobile";
     int loginAttempts = 0;
 
 	@Override
