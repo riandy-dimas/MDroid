@@ -12,6 +12,7 @@ import id.ac.ui.cs.scele.mobile.model.MoodleModuleContent;
 import id.ac.ui.cs.scele.mobile.model.MoodleSection;
 import id.ac.ui.cs.scele.mobile.task.CourseContentSyncTask;
 import id.ac.ui.cs.scele.mobile.task.DownloadTask;
+import id.ac.ui.cs.scele.mobile.view.FontAwesomeSymbol;
 import id.ac.ui.cs.scele.mobile.view.StickyListView;
 import id.ac.ui.cs.scele.mobile.view.StickyListView.PinnedSectionListAdapter;
 
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -221,8 +223,13 @@ public class ContentFragment extends Fragment implements OnRefreshListener {
 			case TYPE_MODULE:
 				MoodleModule module = listObjects.get(position).module;
 
+				Typeface font = Typeface.createFromAsset( getResources().getAssets(), "fontawesome.ttf" );
+				viewHolder.modulename.setTypeface(font);
 				// Module name
 				String modulename = module.getName();
+				if(module.getModname().equals("assign") || module.getModname().equals("quiz"))
+					modulename+=" &#xf08e";
+
 				if (modulename == null)
 					modulename = "";
 				else
