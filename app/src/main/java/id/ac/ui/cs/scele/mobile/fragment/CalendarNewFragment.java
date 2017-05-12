@@ -97,7 +97,7 @@ public class CalendarNewFragment extends Fragment {
                 String.valueOf(session.getCurrentSiteId()));
 
         for(MoodleEvent mEvent: mEvents){
-            Event event = new Event(Color.GRAY, Long.parseLong(mEvent.getTimestart()+"000"), mEvent.getDescription());
+            Event event = new Event(getResources().getColor(R.color.section_title_color), Long.parseLong(mEvent.getTimestart()+"000"), mEvent.getDescription());
             Log.d("calendaradd", mEvent.getCoursename()+"");
             calendarView.addEvent(event,false);
         }
