@@ -39,6 +39,7 @@ public class CourseNewFragment extends Fragment {
         mViewPager.setAdapter(new CourseTabsAdapter(getChildFragmentManager()));
 
         SlidingTabLayout mSlidingTabLayout = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
+        mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.moodle_click_color));
         mSlidingTabLayout.setViewPager(mViewPager);
 
     }

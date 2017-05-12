@@ -66,6 +66,7 @@ public class CourseContentActivity extends BaseNavigationActivity {
 		viewPager.setAdapter(mAdapter);
 
 		SlidingTabLayout mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
+		mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.moodle_click_color));
 		mSlidingTabLayout.setViewPager(viewPager);
 	}
 
