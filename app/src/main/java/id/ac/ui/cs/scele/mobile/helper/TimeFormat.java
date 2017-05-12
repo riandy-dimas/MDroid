@@ -6,6 +6,8 @@
 
 package id.ac.ui.cs.scele.mobile.helper;
 
+import android.util.Log;
+
 import java.util.Calendar;
 
 /**
@@ -26,6 +28,7 @@ public class TimeFormat {
 	 * @return section title
 	 */
 	public static String getSectionTitle(int time) {
+
 		long ltime = ((long) time) * 1000;
 		Calendar c = Calendar.getInstance();
 		int nowDay = c.get(Calendar.DATE);
@@ -38,7 +41,7 @@ public class TimeFormat {
 		int givenYear = c.get(Calendar.YEAR);
 
 		// Past
-		if (time * 1000 < System.currentTimeMillis()) {
+		if (ltime < System.currentTimeMillis()) {
 			if (nowYear - givenYear > 1)
 				return (nowYear - givenYear) + " years ago";
 			else if (nowYear - givenYear == 1)
