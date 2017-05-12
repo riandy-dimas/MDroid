@@ -62,15 +62,17 @@ public class MainActivity extends BaseNavigationActivity {
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    final FragmentTransaction transaction = fragmentManager.beginTransaction();
+
                     switch (item.getItemId()) {
                         case R.id.action_dashboard:
-                            Toast.makeText(getBaseContext(), "COURSE",
-                                    Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getBaseContext(), "COURSE",
+//                                    Toast.LENGTH_LONG).show();
                             fragment = new CourseNewFragment();
                             break;
                         case R.id.action_calendar:
-                            Toast.makeText(getBaseContext(), "KALENDER",
-                                    Toast.LENGTH_LONG).show();
+                            Toast.makeText(getBaseContext(), "Swipe to change month",
+                                    Toast.LENGTH_SHORT).show();
                             fragment = new CalendarNewFragment();
                             break;
 //                        case R.id.action_messages:
@@ -79,18 +81,17 @@ public class MainActivity extends BaseNavigationActivity {
 //                            fragment = new MessagingNewFragment();
 //                            break;
                         case R.id.action_forum:
-                            Toast.makeText(getBaseContext(), "FORUM",
-                                    Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getBaseContext(), "FORUM",
+//                                    Toast.LENGTH_LONG).show();
                             fragment = new ForumFragment();
                             break;
                         case R.id.action_more:
-                            Toast.makeText(getBaseContext(), "NOTIF",
-                                    Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getBaseContext(), "NOTIF",
+//                                    Toast.LENGTH_LONG).show();
                             fragment = new NotificationFragment();
                             break;
                     }
-                    final FragmentTransaction transaction = fragmentManager.beginTransaction();
-                    transaction.replace(R.id.main_container, fragment).commit();
+                    transaction.replace(R.id.main_container, fragment).commitNow();
                     return true;
                 }
             });
