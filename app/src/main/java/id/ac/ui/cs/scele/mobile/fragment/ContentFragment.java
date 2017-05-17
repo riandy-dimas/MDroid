@@ -12,7 +12,6 @@ import id.ac.ui.cs.scele.mobile.model.MoodleModuleContent;
 import id.ac.ui.cs.scele.mobile.model.MoodleSection;
 import id.ac.ui.cs.scele.mobile.task.CourseContentSyncTask;
 import id.ac.ui.cs.scele.mobile.task.DownloadTask;
-import id.ac.ui.cs.scele.mobile.view.FontAwesomeSymbol;
 import id.ac.ui.cs.scele.mobile.view.StickyListView;
 import id.ac.ui.cs.scele.mobile.view.StickyListView.PinnedSectionListAdapter;
 
