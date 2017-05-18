@@ -12,6 +12,7 @@ android {
 
     aaptOptions {
         additionalParameters "--no-version-vectors"
+        cruncherEnabled = false
     }
 
     buildTypes {
@@ -38,6 +39,6 @@ dependencies {
     compile 'com.anjlab.android.iab.v3:library:1.0.29'
     compile 'com.github.sundeepk:compact-calendar-view:2.0.1'
     compile 'com.sothree.slidinguppanel:library:3.3.1'
-
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:design:25.0.1'
 }
