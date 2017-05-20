@@ -86,8 +86,8 @@ public class MainActivity extends BaseNavigationActivity {
                             fragment = new ForumFragment();
                             break;
                         case R.id.action_more:
-//                            Toast.makeText(getBaseContext(), "NOTIF",
-//                                    Toast.LENGTH_LONG).show();
+                            Toast.makeText(getBaseContext(), "Pull to refresh notification",
+                                    Toast.LENGTH_SHORT).show();
                             fragment = new NotificationFragment();
                             break;
                     }

@@ -2,6 +2,7 @@ package id.ac.ui.cs.scele.mobile.fragment;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,7 +39,7 @@ public class CalendarNewFragment extends Fragment {
 
     CompactCalendarView calendarView;
     TextView calendarMonth;
-    TextView textJadwal;
+    TextView textJadwalHide;
     SlidingUpPanelLayout slidingUpPanelLayout;
     LinearLayout dragView;
     List<MoodleEvent> mEvents;
@@ -58,28 +59,46 @@ public class CalendarNewFragment extends Fragment {
         calendarView = (CompactCalendarView) view.findViewById(R.id.calendar_view);
         calendarMonth = (TextView) view.findViewById(R.id.calender_month);
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layout);
-        textJadwal = (TextView) view.findViewById(R.id.text_jadwal);
+        textJadwalHide = (TextView) view.findViewById(R.id.text_jadwal_hide);
         dragView = (LinearLayout) view.findViewById(R.id.dragView);
 
+        Typeface font = Typeface.createFromAsset( getResources().getAssets(), "fontawesome.ttf" );
+        textJadwalHide.setTypeface(font);
 
         slidingUpPanelLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener(){
 
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
-
+                textJadwalHide.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
                 if(newState.name().equals("EXPANDED")){
                     slidingUpPanelLayout.setTouchEnabled(false);
+                    textJadwalHide.setText(getText(R.string.text_schedule_hide));
+                    textJadwalHide.setVisibility(View.VISIBLE);
+                    dragView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                        }
+                    });
+                }
+                else if(newState.name().equals("COLLAPSED")){
+                    textJadwalHide.setText(getText(R.string.text_schedule_hide_show));
+                    textJadwalHide.setVisibility(View.VISIBLE);
+                    slidingUpPanelLayout.setTouchEnabled(true);
                     dragView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
                         }
                     });
-                } else {
+                }
+                else {
+                    textJadwalHide.setText(getText(R.string.text_schedule_hide_drag));
+                    textJadwalHide.setVisibility(View.VISIBLE);
                     slidingUpPanelLayout.setTouchEnabled(true);
                     dragView.setOnClickListener(new View.OnClickListener() {
                         @Override

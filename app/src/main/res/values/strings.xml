@@ -16,6 +16,11 @@
 
     <!-- Calendar Fragment -->
     <string name="text_schedule">Schedule</string>
+    <string name="text_schedule_hide">&#xf078;</string>
+    <string name="text_schedule_hide_show">&#xf077;</string>
+    <string name="text_schedule_hide_drag">&#xf07d;</string>
+
+
 
     <!-- Bottom menu navigation -->
     <string name="bot_nav_dashboard">Course</string>
@@ -195,5 +200,15 @@
 
     <!-- AppBrowser Activity -->
     <string name="activity_appbrowser_autologin_info">Attempting auto login</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_logout">Sign Out</string>
+    <string name="nav_setting">Settings</string>
+    <string name="nav_about">About</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package id.ac.ui.cs.scele.mobile.fragment;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import id.ac.ui.cs.scele.R;
 import id.ac.ui.cs.scele.mobile.activity.CalendarActivity;
 import id.ac.ui.cs.scele.mobile.activity.ContactActivity;
@@ -47,18 +48,17 @@ public class LeftNavigationFragment extends Fragment {
 	SessionSetting session;
 
 	String[] moodleMenuItems = new String[] {
-      //      "Courses",
+            "Setting",
      //       "Messaging",
 	//		"Contacts",
      //       "Calender",
      //       "Forums",
      //       "Notifications"
 	};
-	String[] appMenuItems = new String[] { "Logout", "Settings",
-			"Add account" };
+	String[] appMenuItems = new String[] { "Logout" };
 
 	int[] moodleMenuIcons = new int[] {
-     //       R.drawable.icon_school_greyscale,
+            R.drawable.ic_settings_black_24dp,
 	//		R.drawable.icon_message_greyscale,
 	//		R.drawable.icon_people_greyscale2,
 	//		R.drawable.icon_today_greyscale,
@@ -89,19 +89,16 @@ public class LeftNavigationFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
+                boolean nextDrawerState = false;
 				switch (adapter.getItemViewType(position)) {
 				case LeftNavListAdapter.TYPE_ACCOUNT:
-					session.setCurrentSiteId(sites.get(position).getId());
-					Intent i = new Intent(context, CourseActivity.class);
-					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-							| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-					context.startActivity(i);
+                    nextDrawerState = true;
 					break;
 				case LeftNavListAdapter.TYPE_MOODLE_MENUITEM:
 					switch (position - sites.size() - 1) {
 					case 0:
 						context.startActivity(new Intent(context,
-								CourseActivity.class));
+								SettingsActivity.class));
 						break;
 //					case 1:
 //						context.startActivity(new Intent(context,
@@ -146,7 +143,7 @@ public class LeftNavigationFragment extends Fragment {
 					}
 					break;
 				}
-				drawerState.setDrawerState(false);
+				drawerState.setDrawerState(nextDrawerState);
 			}
 		});
 
@@ -214,7 +211,7 @@ public class LeftNavigationFragment extends Fragment {
 							.findViewById(R.id.nav_user_fullname);
 					viewHolder.sitename = (TextView) convertView
 							.findViewById(R.id.nav_sitename);
-					viewHolder.userimage = (ImageView) convertView
+					viewHolder.userimage = (CircleImageView) convertView
 							.findViewById(R.id.nav_user_image);
 					viewHolder.userselected = (ImageView) convertView
 							.findViewById(R.id.nav_user_selected);
@@ -258,14 +255,16 @@ public class LeftNavigationFragment extends Fragment {
 				Bitmap userImage = ImageDecoder.decodeImage(new File(
 						Environment.getExternalStorageDirectory() + "/MDroid/."
 								+ sites.get(position).getId()));
+
+
 				if (userImage != null)
 					viewHolder.userimage.setImageBitmap(userImage);
 
 				// Show this as current account if it is
-				if (session.getCurrentSiteId() == sites.get(position).getId())
-					viewHolder.userselected.setVisibility(ImageView.VISIBLE);
-				else
-					viewHolder.userselected.setVisibility(ImageView.GONE);
+//				if (session.getCurrentSiteId() == sites.get(position).getId())
+//					viewHolder.userselected.setVisibility(ImageView.VISIBLE);
+//				else
+//					viewHolder.userselected.setVisibility(ImageView.GONE);
 				break;
 
 			case TYPE_MOODLE_MENUITEM:

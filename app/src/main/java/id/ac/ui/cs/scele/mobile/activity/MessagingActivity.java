@@ -24,10 +24,6 @@ public class MessagingActivity extends BaseNavigationActivity implements
         setContentView(R.layout.activity_messaging);
         setUpDrawer();
 
-        // Send a tracker
-        ((ApplicationClass) getApplication())
-                .sendScreen(Param.GA_SCREEN_MESSAGE_LISTING);
-
         // Set fragment
         changeFragment(FRAG_MESSAGE_LIST, false);
 
@@ -56,7 +52,6 @@ public class MessagingActivity extends BaseNavigationActivity implements
                     R.anim.pop_enter, R.anim.pop_exit);
 
         switch(FragmentId){
-            default:
             case FRAG_MESSAGE_LIST:
                 transaction.replace(R.id.messaging_layout, new MessageListingFragment());
                 break;
@@ -64,6 +59,6 @@ public class MessagingActivity extends BaseNavigationActivity implements
                 transaction.replace(R.id.messaging_layout, new MessagingFragment());
                 break;
         }
-        transaction.addToBackStack("null").commit();
+        transaction.addToBackStack(null).commit();
     }
 }

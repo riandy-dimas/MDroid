@@ -6,6 +6,14 @@
 
     <dimen name="design_bottom_navigation_active_text_size">12sp</dimen>
 
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="profile_width">75dp</dimen>
+    <dimen name="profile_height">75dp</dimen>
+
 
     <!-- Side navigation layout size -->
     <dimen name="activity_left_nav_width">240dp</dimen>
@@ -24,5 +32,9 @@
     <dimen name="activity_login_imageview_paddingstart">10dp</dimen>
     <dimen name="activity_login_imageview_paddingright">5dp</dimen>
     <dimen name="activity_login_imageview_paddingend">5dp</dimen>
+
+    <dimen name="navdrawer_profile_image_size">75dp</dimen>
+    <dimen name="navdrawer_header_height">160dp</dimen>
+
 
 </resources>

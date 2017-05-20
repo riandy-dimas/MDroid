@@ -107,6 +107,7 @@ public class NotificationFragment extends Fragment implements OnRefreshListener 
 
 				case MDroidNotification.TYPE_MESSAGE:
 					i = new Intent(context, MessagingActivity.class);
+
 					break;
 
 				case MDroidNotification.TYPE_PARTICIPANT:

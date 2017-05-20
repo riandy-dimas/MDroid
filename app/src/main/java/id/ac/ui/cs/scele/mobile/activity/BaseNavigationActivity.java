@@ -76,6 +76,10 @@ public abstract class BaseNavigationActivity extends ActionBarActivity
 //				});
 	}
 
+	public void setMainDrawer(){
+
+	}
+
 	public void setUpDrawer() {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerToggle = new ActionBarDrawerToggle(this, /* host Activity */

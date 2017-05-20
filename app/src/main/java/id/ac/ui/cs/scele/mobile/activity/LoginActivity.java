@@ -17,7 +17,7 @@ import android.view.View;
 public class LoginActivity extends FragmentActivity {
 	LoginFragmentAdapter mAdapter;
 	ViewPager mPager;
-	private String[] tabs = { "Normal", "Paranoid" };
+	private String[] tabs = { "Normal" };
 
 	@SuppressLint("InlinedApi")
 	@Override
@@ -31,7 +31,7 @@ public class LoginActivity extends FragmentActivity {
 
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setAdapter(mAdapter);
-		mPager.setOffscreenPageLimit(2);
+		mPager.setOffscreenPageLimit(1);
 	}
 
 	class LoginFragmentAdapter extends FragmentPagerAdapter {
@@ -42,10 +42,7 @@ public class LoginActivity extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			if (position == 0)
 				return new NormalLoginFragment();
-			else
-				return new ParanoidLoginFragment();
 		}
 
 		@Override
